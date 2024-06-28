@@ -22,6 +22,11 @@ vim.keymap.set("n", "<leader>S", ":set ic!<CR>", { desc = "Toggle Search SmartCa
 vim.keymap.set("n", "<leader>d", ":lua vim.diagnostic.open_float(nil, {scope=\"cursor\"})<CR>")
 
 
+vim.keymap.set({ "n", "v" }, "<leader>ts", ":SupermavenToggle<CR>", { desc = "Toggle Supermaven" })
+
+
+
+
 local auto_import = function()
   local params = vim.lsp.util.make_range_params()
   params.context = {

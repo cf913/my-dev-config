@@ -88,7 +88,7 @@ require("lazy").setup({
           enable = true,
         },
         filters = {
-          dotfiles = true,
+          dotfiles = false,
         },
       }
     end
@@ -139,7 +139,12 @@ require("lazy").setup({
   {
     "supermaven-inc/supermaven-nvim",
     config = function()
-      require("supermaven-nvim").setup({})
+      require("supermaven-nvim").setup({
+        color = {
+          suggestion_color = "#ffffff",
+        },
+        ignore_filtetypes = { "git", "node_modules", "dist", "build", "target", "vendor", '.env', '.env.local' }
+      })
     end,
   },
   {
