@@ -1,0 +1,17 @@
+/**
+
+!.gitignore
+
+!.config/
+
+!.config/nvim/
+!.config/nvim/**
+
+!.config/alacritty/
+!.config/alacritty/**
+
+!.tmux.conf
+
+!.zshrc
+
+
