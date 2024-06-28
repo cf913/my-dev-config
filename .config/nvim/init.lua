@@ -89,6 +89,7 @@ require("lazy").setup({
         },
         filters = {
           dotfiles = false,
+          custom = { ".git" },
         },
       }
     end

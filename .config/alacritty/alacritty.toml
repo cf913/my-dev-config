@@ -17,6 +17,6 @@ resize_increments = true
 normal = { family = "MesloLGM Nerd Font", style = "Regular" }
 size = 14
 
-[shell]
-program = "/bin/zsh"
-args = ["-l", "-c", "tmux"]
+# [shell]
+# program = "/bin/zsh"
+# args = ["-l", "-c", "tmux"]
