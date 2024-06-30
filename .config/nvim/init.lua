@@ -23,6 +23,25 @@ vim.g.maplocalleader = "\\" -- Same for `maplocalleader`
 
 require("lazy").setup({
   {
+    "kylechui/nvim-surround",
+    version = "*", -- Use for stability; omit to use `main` branch for the latest features
+    event = "VeryLazy",
+    config = function()
+      require("nvim-surround").setup({
+        -- Configuration here, or leave empty to use defaults
+      })
+    end
+  },
+  {
+    "folke/todo-comments.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    opts = {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    }
+  },
+  {
     'nvim-telescope/telescope.nvim',
     tag = '0.1.6',
     dependencies = { 'nvim-lua/plenary.nvim' }
@@ -201,7 +220,7 @@ require("lazy").setup({
     cmd = "Trouble",
     keys = {
       {
-        "<leader>xx",
+        "<leader>fd",
         "<cmd>Trouble ndiagnostics toggle<cr>",
         desc = "Diagnostics (Trouble)",
       },
@@ -222,7 +241,7 @@ require("lazy").setup({
       },
       {
         "<leader>cl",
-        "<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
+        "<cmd>Trouble lsp toggle focus=false win.position=right win.size=0.3<cr>",
         desc = "LSP Definitions / references / ... (Trouble)",
       },
       {
@@ -231,7 +250,7 @@ require("lazy").setup({
         desc = "Location List (Trouble)",
       },
       {
-        "<leader>xQ",
+        "<leader>fq",
         "<cmd>Trouble qflist toggle<cr>",
         desc = "Quickfix List (Trouble)",
       },

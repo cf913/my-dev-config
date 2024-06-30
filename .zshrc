@@ -29,7 +29,7 @@ alias open-app="cd ~/Projects/expo/budget-keepr && zed . && npm run ios"
 
 # vim open projects
 alias vb="cd ~/Projects/expo/budget-keepr && vim ."
-alias tvb="tmux new -A -s budget \; send-keys -t budget.0 'cd ~/Projects/expo/budget-keepr && vim .' ENTER \;"
+alias tvb="tmux new -A -s b \; send-keys -t b.0 'cd ~/Projects/expo/budget-keepr && vim .' ENTER \;"
 
 alias vbsf="cd ~/Projects/expo/budget-keepr/supabase/functions && vim ."
 
@@ -53,6 +53,7 @@ alias tka="tmux kill-session -a"
 alias tks="tmux kill-server"
 alias tls="tmux ls"
 alias ta="tmux attach"
+alias tn="tmux new -A -s"
 
 #alias npm="pnpm"
 #alias nnpm="npm"
