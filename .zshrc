@@ -30,18 +30,17 @@ alias open-app="cd ~/Projects/expo/budget-keepr && zed . && npm run ios"
 # vim open projects
 alias vb="cd ~/Projects/expo/budget-keepr && vim ."
 alias tvb="tmux new -A -s b \; send-keys -t b.0 'cd ~/Projects/expo/budget-keepr && vim .' ENTER \;"
+alias va="cd ~/Projects/expo/agendax-app && vim ."
 
 alias vbsf="cd ~/Projects/expo/budget-keepr/supabase/functions && vim ."
 
 alias vg="cd ~/Projects/galorama && vim ."
 
-alias vv="cd ~/.config/nvim && vim ."
-alias va="cd ~/.config/alacritty && vim ."
-alias vz="vim ~/.zshrc"
-alias vt="vim ~/.tmux.conf"
 alias vc="vim ~/"
+alias vv="vim ~/"
 
 alias vui="cd ~/Projects/expo/chad-ui && vim ."
+alias vo="tmux new -A -s obsidian \; send-keys -t obsidian.0 'vim ~/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/Vault' ENTER \;"
 
 # zed open projects
 alias open-ui="cd ~/Projects/expo/chad-ui && zed . && npm run ios"
@@ -61,6 +60,8 @@ alias vim="nvim"
 alias ls="eza --icons=always"
 alias cd="z"
 alias dev="tmux new -A -s session \; send-keys -t session.0 'npm run tmux:start' ENTER \;"
+
+alias sz="source ~/.zshrc"
 
 eval "$(zoxide init zsh)"
 
@@ -96,5 +97,11 @@ bindkey "^[[B" history-search-forward
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# ANDROID STUDIO STUFF
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home
+export ANDROID_HOME=/Users/cf913/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 # bindkey '\t' autosuggest-accept

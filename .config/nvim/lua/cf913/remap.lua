@@ -23,6 +23,10 @@ vim.keymap.set("n", "<leader>d", ":lua vim.diagnostic.open_float(nil, {scope=\"c
 
 
 vim.keymap.set({ "n", "v" }, "<leader>ts", ":SupermavenToggle<CR>", { desc = "Toggle Supermaven" })
+vim.keymap.set({ "n", "v" }, "<leader>tn", ":tabN<CR>", { desc = "Tab Next" })
+vim.keymap.set({ "n", "v" }, "<leader>tp", ":tabp<CR>", { desc = "Tab Previous" })
+vim.keymap.set({ "n", "v" }, "<leader>to", ":tab new<CR>", { desc = "Tab Open" })
+vim.keymap.set({ "n", "v" }, "<leader>tq", ":tabc<CR>", { desc = "Tab Open" })
 
 
 

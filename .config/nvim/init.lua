@@ -23,6 +23,34 @@ vim.g.maplocalleader = "\\" -- Same for `maplocalleader`
 
 require("lazy").setup({
   {
+    "epwalsh/obsidian.nvim",
+    version = "*", -- recommended, use latest release instead of latest commit
+    lazy = true,
+    -- Replace the above line with this if you only want to load obsidian.nvim for markdown files in your vault:
+    event = {
+      -- If you want to use the home shortcut '~' here you need to call 'vim.fn.expand'.
+      -- E.g. "BufReadPre " .. vim.fn.expand "~" .. "/my-vault/**.md"
+      "BufReadPre " .. vim.fn.expand "~" .. "/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/**.md",
+      "BufNewFile " .. vim.fn.expand "~" .. "/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/**.md",
+    },
+    dependencies = {
+      -- Required.
+      "nvim-lua/plenary.nvim",
+
+      -- see below for full list of optional dependencies 👇
+    },
+    opts = {
+      workspaces = {
+        {
+          name = "personal",
+          path = "~/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault",
+        },
+      },
+
+      -- see below for full list of options 👇
+    },
+  },
+  {
     "kylechui/nvim-surround",
     version = "*", -- Use for stability; omit to use `main` branch for the latest features
     event = "VeryLazy",
@@ -46,6 +74,7 @@ require("lazy").setup({
     tag = '0.1.6',
     dependencies = { 'nvim-lua/plenary.nvim' }
   },
+  { "lukas-reineke/indent-blankline.nvim", main = "ibl",   opts = {} },
   {
     'folke/tokyonight.nvim',
     lazy = false,
@@ -74,9 +103,9 @@ require("lazy").setup({
       },
     },
   },
-  { "Bilal2453/luvit-meta",             lazy = true }, -- optional `vim.uv` typings
+  { "Bilal2453/luvit-meta",                lazy = true }, -- optional `vim.uv` typings
   -- { 'j-hui/fidget.nvim', opts = {}},
-  { 'VonHeikemen/lsp-zero.nvim',        branch = 'v3.x' },
+  { 'VonHeikemen/lsp-zero.nvim',           branch = 'v3.x' },
   { 'williamboman/mason.nvim' },
   { 'williamboman/mason-lspconfig.nvim' },
   { 'neovim/nvim-lspconfig' },
