@@ -38,9 +38,11 @@ alias vg="cd ~/Projects/galorama && vim ."
 
 alias vc="vim ~/"
 alias vv="vim ~/"
+alias vz="vim ~/.zshrc"
 
 alias vui="cd ~/Projects/expo/chad-ui && vim ."
-alias vo="tmux new -A -s obsidian \; send-keys -t obsidian.0 'vim ~/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/Vault' ENTER \;"
+alias tvo="tmux new -A -s obsidian \; send-keys -t obsidian.0 'vim ~/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/Vault' ENTER \;"
+alias vo="vim ~/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/Vault"
 
 # zed open projects
 alias open-ui="cd ~/Projects/expo/chad-ui && zed . && npm run ios"

@@ -40,13 +40,17 @@ require("lazy").setup({
       -- see below for full list of optional dependencies 👇
     },
     opts = {
+      notes_subdir = "0 Inbox",
       workspaces = {
         {
           name = "personal",
           path = "~/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault",
         },
       },
-
+      daily_notes = {
+        folder = "Journal",
+      },
+      new_notes_location = "0 Inbox",
       -- see below for full list of options 👇
     },
   },
