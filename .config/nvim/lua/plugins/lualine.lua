@@ -4,12 +4,6 @@ return {
   dependencies = "nvim-tree/nvim-web-devicons",
   opts = function()
     local utils = require("core.utils")
-    local copilot_colors = {
-      [""] = utils.get_hlgroup("Comment"),
-      ["Normal"] = utils.get_hlgroup("Comment"),
-      ["Warning"] = utils.get_hlgroup("DiagnosticError"),
-      ["InProgress"] = utils.get_hlgroup("DiagnosticWarn"),
-    }
 
     return {
       options = {

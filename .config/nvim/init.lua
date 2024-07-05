@@ -25,31 +25,8 @@ require("lazy").setup({
   spec = {
     { import = "plugins" },
     {
-      'folke/tokyonight.nvim',
-      lazy = false,
-      priority = 9999,
-      opts = {
-        transparent = true,
-        style = 'night',
-        styles = {
-          sidebars = "transparent",
-          floats = "transparent",
-        },
-        on_colors = function(colors)
-          colors.bg_statusline = colors
-              .none -- To check if its working try something like "#ff00ff" instead of colors.none
-        end,
-      },
-    },
-    {
-      "scottmckendry/cyberdream.nvim",
-      lazy = true,
-      priority = 1000,
-    },
-    {
       "epwalsh/obsidian.nvim",
       version = "*", -- recommended, use latest release instead of latest commit
-      lazy = true,
       -- Replace the above line with this if you only want to load obsidian.nvim for markdown files in your vault:
       event = {
         -- If you want to use the home shortcut '~' here you need to call 'vim.fn.expand'.
@@ -102,7 +79,7 @@ require("lazy").setup({
       tag = '0.1.6',
       dependencies = { 'nvim-lua/plenary.nvim' }
     },
-    { "lukas-reineke/indent-blankline.nvim", lazy = true, main = "ibl", opts = {} },
+    { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
     {
       "folke/lazydev.nvim",
       ft = "lua", -- only load on lua files
@@ -299,9 +276,11 @@ require("lazy").setup({
   }
 })
 
-vim.cmd.colorscheme('tokyonight')
-
-
+require("ibl").setup({
+  indent = {
+    char = "│",
+  },
+})
 
 require('colorizer').setup()
 
