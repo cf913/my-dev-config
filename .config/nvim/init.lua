@@ -79,7 +79,16 @@ require("lazy").setup({
       tag = '0.1.6',
       dependencies = { 'nvim-lua/plenary.nvim' }
     },
-    { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
+    {
+      "lukas-reineke/indent-blankline.nvim",
+      event = "BufReadPre",
+      main = "ibl",
+      opts = {
+        indent = {
+          char = "│",
+        },
+      }
+    },
     {
       "folke/lazydev.nvim",
       ft = "lua", -- only load on lua files
@@ -162,10 +171,6 @@ require("lazy").setup({
       opts = {
         -- add any options here
       }
-    },
-    {
-      'nvim-lualine/lualine.nvim',
-      dependencies = { 'nvim-tree/nvim-web-devicons' }
     },
     {
       "luckasRanarison/tailwind-tools.nvim",
@@ -275,11 +280,6 @@ require("lazy").setup({
   }
 })
 
-require("ibl").setup({
-  indent = {
-    char = "│",
-  },
-})
 
 require('colorizer').setup()
 

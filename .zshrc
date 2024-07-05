@@ -37,7 +37,7 @@ alias vbsf="cd ~/Projects/expo/budget-keepr/supabase/functions && vim ."
 alias vg="cd ~/Projects/galorama && vim ."
 
 alias vc="vim ~/"
-alias vv="vim ~/"
+alias vv="cd ~/.config/nvim && vim ."
 alias vz="vim ~/.zshrc"
 
 alias vui="cd ~/Projects/expo/chad-ui && vim ."
@@ -64,6 +64,7 @@ alias cd="z"
 alias dev="tmux new -A -s session \; send-keys -t session.0 'npm run tmux:start' ENTER \;"
 
 alias sz="source ~/.zshrc"
+alias v="nvim"
 
 eval "$(zoxide init zsh)"
 
