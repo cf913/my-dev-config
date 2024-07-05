@@ -1,4 +1,5 @@
 local builtin = require('telescope.builtin')
+
 vim.keymap.set('n', '<leader>fp', builtin.find_files, { desc = "Find Files" })
 vim.keymap.set('n', '<leader>fh', '<cmd>Telescope find_files find_command=rg,--ignore,--hidden,--files,-u<CR>',
   { desc = "Find Hidden Files" })

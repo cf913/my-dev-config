@@ -25,37 +25,6 @@ require("lazy").setup({
   spec = {
     { import = "plugins" },
     {
-      "epwalsh/obsidian.nvim",
-      version = "*", -- recommended, use latest release instead of latest commit
-      -- Replace the above line with this if you only want to load obsidian.nvim for markdown files in your vault:
-      event = {
-        -- If you want to use the home shortcut '~' here you need to call 'vim.fn.expand'.
-        -- E.g. "BufReadPre " .. vim.fn.expand "~" .. "/my-vault/**.md"
-        "BufReadPre " .. vim.fn.expand "~" .. "/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/**.md",
-        "BufNewFile " .. vim.fn.expand "~" .. "/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/**.md",
-      },
-      dependencies = {
-        -- Required.
-        "nvim-lua/plenary.nvim",
-
-        -- see below for full list of optional dependencies 👇
-      },
-      opts = {
-        notes_subdir = "0 Inbox",
-        workspaces = {
-          {
-            name = "personal",
-            path = "~/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault",
-          },
-        },
-        daily_notes = {
-          folder = "Journal",
-        },
-        new_notes_location = "0 Inbox",
-        -- see below for full list of options 👇
-      },
-    },
-    {
       "kylechui/nvim-surround",
       version = "*", -- Use for stability; omit to use `main` branch for the latest features
       event = "VeryLazy",
@@ -73,11 +42,6 @@ require("lazy").setup({
         -- or leave it empty to use the default settings
         -- refer to the configuration section below
       }
-    },
-    {
-      'nvim-telescope/telescope.nvim',
-      tag = '0.1.6',
-      dependencies = { 'nvim-lua/plenary.nvim' }
     },
     {
       "lukas-reineke/indent-blankline.nvim",
@@ -178,105 +142,11 @@ require("lazy").setup({
       opts = {} -- your configuration
     },
     {
-      "supermaven-inc/supermaven-nvim",
-      config = function()
-        require("supermaven-nvim").setup({
-          color = {
-            suggestion_color = "#ffffff",
-          },
-          ignore_filtetypes = { "git", "node_modules", "dist", "build", "target", "vendor", '.env', '.env.local' }
-        })
-      end,
-    },
-    {
       "ThePrimeagen/harpoon",
       branch = "harpoon2",
       dependencies = { "nvim-lua/plenary.nvim", "nvim-telescope/telescope.nvim" }
     },
-    {
-      "kdheepak/lazygit.nvim",
-      cmd = {
-        "LazyGit",
-        "LazyGitConfig",
-        "LazyGitCurrentFile",
-        "LazyGitFilter",
-        "LazyGitFilterCurrentFile",
-      },
-      -- optional for floating window border decoration
-      dependencies = {
-        "nvim-lua/plenary.nvim",
-      },
-      -- setting the keybinding for LazyGit with 'keys' is recommended in
-      -- order to load the plugin when the command is run for the first time
-      keys = {
-        { "<leader>lg", "<cmd>LazyGit<cr>", desc = "LazyGit" }
-      }
-    },
-    {
-      "folke/trouble.nvim",
-      opts = {
-        focus = true,
-        modes = {
-          nsymbols = {
-            mode = "symbols",
-            win = {
-              size = 0.3,
-            }
-          },
-          ndiagnostics = {
-            mode = "diagnostics",
-            win = {
-              position = "bottom",
-              size = 0.3,
-            },
-            preview = {
-              type = "split",
-              relative = "win",
-              position = "right",
-              size = 0.5,
-            },
-          },
-        },
-      }, -- for default options, refer to the configuration section for custom setup.
-      cmd = "Trouble",
-      keys = {
-        {
-          "<leader>fd",
-          "<cmd>Trouble ndiagnostics toggle<cr>",
-          desc = "Diagnostics (Trouble)",
-        },
-        -- {
-        --   "<leader>xx",
-        --   "<cmd>Trouble diagnostics toggle<cr>",
-        --   desc = "Diagnostics (Trouble)",
-        -- },
-        {
-          "<leader>xX",
-          "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
-          desc = "Buffer Diagnostics (Trouble)",
-        },
-        {
-          "<leader>cs",
-          "<cmd>Trouble nsymbols toggle focus=false<cr>",
-          desc = "Symbols (Trouble)",
-        },
-        {
-          "<leader>cl",
-          "<cmd>Trouble lsp toggle focus=false win.position=right win.size=0.3<cr>",
-          desc = "LSP Definitions / references / ... (Trouble)",
-        },
-        {
-          "<leader>xL",
-          "<cmd>Trouble loclist toggle<cr>",
-          desc = "Location List (Trouble)",
-        },
-        {
-          "<leader>fq",
-          "<cmd>Trouble qflist toggle<cr>",
-          desc = "Quickfix List (Trouble)",
-        },
-      },
-    }
+
   }
 })
 
