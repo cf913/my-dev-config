@@ -110,7 +110,6 @@ require("lazy").setup({
     { 'hrsh7th/cmp-nvim-lsp' },
     { 'nvim-treesitter/nvim-treesitter' },
     { 'L3MON4D3/LuaSnip' },
-    { "rose-pine/neovim",               lazy = true, name = "rose-pine" },
     {
       "nvim-tree/nvim-tree.lua",
       version = "*",
