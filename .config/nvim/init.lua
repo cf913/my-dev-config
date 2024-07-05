@@ -95,10 +95,22 @@ require("lazy").setup({
           update_focused_file = {
             enable = true,
           },
-          filters = {
+          filters             = {
             dotfiles = false,
             custom = { ".git" },
           },
+          actions             = {
+            open_file = { quit_on_open = true },
+          },
+          renderer            = {
+            indent_markers = { enable = true }
+          },
+          respect_buf_cwd     = true,
+          update_cwd          = true,
+          update_focused_file = { enable = true },
+          view                = {
+            adaptive_size = true,
+          }
         }
       end
     },
