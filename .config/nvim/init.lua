@@ -81,39 +81,7 @@ require("lazy").setup({
       end,
     },
     { 'hrsh7th/cmp-nvim-lsp' },
-    { 'nvim-treesitter/nvim-treesitter' },
     { 'L3MON4D3/LuaSnip' },
-    {
-      "nvim-tree/nvim-tree.lua",
-      version = "*",
-      lazy = false,
-      dependencies = {
-        "nvim-tree/nvim-web-devicons",
-      },
-      config = function()
-        require("nvim-tree").setup {
-          update_focused_file = {
-            enable = true,
-          },
-          filters             = {
-            dotfiles = false,
-            custom = { ".git" },
-          },
-          actions             = {
-            open_file = { quit_on_open = true },
-          },
-          renderer            = {
-            indent_markers = { enable = true }
-          },
-          respect_buf_cwd     = true,
-          update_cwd          = true,
-          update_focused_file = { enable = true },
-          view                = {
-            adaptive_size = true,
-          }
-        }
-      end
-    },
     {
       'windwp/nvim-autopairs',
       event = "InsertEnter",
@@ -125,7 +93,6 @@ require("lazy").setup({
     {
       "karb94/neoscroll.nvim"
     },
-    { 'petertriho/nvim-scrollbar' },
     {
       'norcalli/nvim-colorizer.lua',
       config = function()
@@ -164,9 +131,6 @@ require("lazy").setup({
     },
     {
       'numToStr/Comment.nvim',
-      opts = {
-        -- add any options here
-      },
       config = function()
         require("Comment").setup()
       end
@@ -174,7 +138,12 @@ require("lazy").setup({
     {
       "luckasRanarison/tailwind-tools.nvim",
       dependencies = { "nvim-treesitter/nvim-treesitter" },
-      opts = {} -- your configuration
+      opts = {}, -- your configuration
+      config = function()
+        require("tailwind-tools").setup({
+          -- your configuration
+        })
+      end
     },
     {
       "ThePrimeagen/harpoon",
