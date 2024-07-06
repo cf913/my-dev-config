@@ -24,11 +24,6 @@ vim.g.maplocalleader = "\\" -- Same for `maplocalleader`
 require("lazy").setup({
   spec = {
     { import = "plugins" },
-    {
-      "folke/todo-comments.nvim",
-      dependencies = { "nvim-lua/plenary.nvim" },
-      opts = {}
-    },
     { "Bilal2453/luvit-meta",             lazy = true }, -- optional `vim.uv` typings
     -- { 'j-hui/fidget.nvim', opts = {}},
     { 'VonHeikemen/lsp-zero.nvim',        branch = 'v3.x' },
@@ -47,11 +42,6 @@ require("lazy").setup({
     },
     { 'hrsh7th/cmp-nvim-lsp' },
     { 'L3MON4D3/LuaSnip' },
-    {
-      'windwp/nvim-autopairs',
-      event = "InsertEnter",
-      opts = {}
-    },
     { 'prettier/vim-prettier' },
     {
       "karb94/neoscroll.nvim"
@@ -61,31 +51,11 @@ require("lazy").setup({
       opts = {}
     },
     {
-      "folke/which-key.nvim",
-      event = "VeryLazy",
-      init = function()
-        vim.o.timeout = true
-        vim.o.timeoutlen = 300
-      end,
-      opts = {}
-    },
-    {
       'lewis6991/gitsigns.nvim',
       opts = {}
     },
     {
       'numToStr/Comment.nvim',
-      opts = {}
-    },
-    {
-      "luckasRanarison/tailwind-tools.nvim",
-      dependencies = { "nvim-treesitter/nvim-treesitter" },
-      opts = {}, -- your configuration
-    },
-    {
-      "ThePrimeagen/harpoon",
-      branch = "harpoon2",
-      dependencies = { "nvim-lua/plenary.nvim", "nvim-telescope/telescope.nvim" },
       opts = {}
     },
   }
