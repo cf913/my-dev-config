@@ -25,36 +25,9 @@ require("lazy").setup({
   spec = {
     { import = "plugins" },
     {
-      "kylechui/nvim-surround",
-      version = "*", -- Use for stability; omit to use `main` branch for the latest features
-      event = "VeryLazy",
-      opts = {}
-    },
-    {
       "folke/todo-comments.nvim",
       dependencies = { "nvim-lua/plenary.nvim" },
       opts = {}
-    },
-    {
-      "lukas-reineke/indent-blankline.nvim",
-      event = "BufReadPre",
-      main = "ibl",
-      opts = {
-        indent = {
-          char = "│",
-        },
-      }
-    },
-    {
-      "folke/lazydev.nvim",
-      ft = "lua", -- only load on lua files
-      opts = {
-        library = {
-          -- See the configuration section for more details
-          -- Load luvit types when the `vim.uv` word is found
-          { path = "luvit-meta/library", words = { "vim%.uv" } },
-        },
-      },
     },
     { "Bilal2453/luvit-meta",             lazy = true }, -- optional `vim.uv` typings
     -- { 'j-hui/fidget.nvim', opts = {}},
@@ -99,15 +72,6 @@ require("lazy").setup({
     {
       'lewis6991/gitsigns.nvim',
       opts = {}
-    },
-    {
-      'akinsho/toggleterm.nvim',
-      version = "*",
-      opts = {
-        open_mapping = [[<leader>`]],
-        insert_mappings = false,
-        direction = 'float'
-      }
     },
     {
       'numToStr/Comment.nvim',
