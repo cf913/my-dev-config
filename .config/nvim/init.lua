@@ -126,7 +126,12 @@ require("lazy").setup({
       "karb94/neoscroll.nvim"
     },
     { 'petertriho/nvim-scrollbar' },
-    { 'norcalli/nvim-colorizer.lua' },
+    {
+      'norcalli/nvim-colorizer.lua',
+      config = function()
+        require('colorizer').setup()
+      end
+    },
     {
       "folke/which-key.nvim",
       event = "VeryLazy",
@@ -140,13 +145,31 @@ require("lazy").setup({
         -- refer to the configuration section below
       }
     },
-    { 'lewis6991/gitsigns.nvim' },
-    { 'akinsho/toggleterm.nvim', version = "*", config = true },
+    {
+      'lewis6991/gitsigns.nvim',
+      config = function()
+        require('gitsigns').setup()
+      end
+    },
+    {
+      'akinsho/toggleterm.nvim',
+      version = "*",
+      config = function()
+        require("toggleterm").setup({
+          open_mapping = [[<leader>`]],
+          insert_mappings = false,
+          direction = 'float'
+        })
+      end
+    },
     {
       'numToStr/Comment.nvim',
       opts = {
         -- add any options here
-      }
+      },
+      config = function()
+        require("Comment").setup()
+      end
     },
     {
       "luckasRanarison/tailwind-tools.nvim",
@@ -156,17 +179,18 @@ require("lazy").setup({
     {
       "ThePrimeagen/harpoon",
       branch = "harpoon2",
-      dependencies = { "nvim-lua/plenary.nvim", "nvim-telescope/telescope.nvim" }
+      dependencies = { "nvim-lua/plenary.nvim", "nvim-telescope/telescope.nvim" },
+      config = function()
+        require("harpoon"):setup({
+          -- your configuration comes here
+          -- or leave it empty to use the default settings
+          -- refer to the configuration section below
+        })
+      end
     },
 
   }
 })
-
-
-require('colorizer').setup()
-
-require('gitsigns').setup()
-
 
 vim.g.markdown_fenced_languages = {
   "ts=typescript"
