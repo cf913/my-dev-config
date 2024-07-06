@@ -28,20 +28,12 @@ require("lazy").setup({
       "kylechui/nvim-surround",
       version = "*", -- Use for stability; omit to use `main` branch for the latest features
       event = "VeryLazy",
-      config = function()
-        require("nvim-surround").setup({
-          -- Configuration here, or leave empty to use defaults
-        })
-      end
+      opts = {}
     },
     {
       "folke/todo-comments.nvim",
       dependencies = { "nvim-lua/plenary.nvim" },
-      opts = {
-        -- your configuration comes here
-        -- or leave it empty to use the default settings
-        -- refer to the configuration section below
-      }
+      opts = {}
     },
     {
       "lukas-reineke/indent-blankline.nvim",
@@ -85,9 +77,7 @@ require("lazy").setup({
     {
       'windwp/nvim-autopairs',
       event = "InsertEnter",
-      config = true
-      -- use opts = {} for passing setup options
-      -- this is equalent to setup({}) function
+      opts = {}
     },
     { 'prettier/vim-prettier' },
     {
@@ -95,9 +85,7 @@ require("lazy").setup({
     },
     {
       'norcalli/nvim-colorizer.lua',
-      config = function()
-        require('colorizer').setup()
-      end
+      opts = {}
     },
     {
       "folke/which-key.nvim",
@@ -106,58 +94,36 @@ require("lazy").setup({
         vim.o.timeout = true
         vim.o.timeoutlen = 300
       end,
-      opts = {
-        -- your configuration comes here
-        -- or leave it empty to use the default settings
-        -- refer to the configuration section below
-      }
+      opts = {}
     },
     {
       'lewis6991/gitsigns.nvim',
-      config = function()
-        require('gitsigns').setup()
-      end
+      opts = {}
     },
     {
       'akinsho/toggleterm.nvim',
       version = "*",
-      config = function()
-        require("toggleterm").setup({
-          open_mapping = [[<leader>`]],
-          insert_mappings = false,
-          direction = 'float'
-        })
-      end
+      opts = {
+        open_mapping = [[<leader>`]],
+        insert_mappings = false,
+        direction = 'float'
+      }
     },
     {
       'numToStr/Comment.nvim',
-      config = function()
-        require("Comment").setup()
-      end
+      opts = {}
     },
     {
       "luckasRanarison/tailwind-tools.nvim",
       dependencies = { "nvim-treesitter/nvim-treesitter" },
       opts = {}, -- your configuration
-      config = function()
-        require("tailwind-tools").setup({
-          -- your configuration
-        })
-      end
     },
     {
       "ThePrimeagen/harpoon",
       branch = "harpoon2",
       dependencies = { "nvim-lua/plenary.nvim", "nvim-telescope/telescope.nvim" },
-      config = function()
-        require("harpoon"):setup({
-          -- your configuration comes here
-          -- or leave it empty to use the default settings
-          -- refer to the configuration section below
-        })
-      end
+      opts = {}
     },
-
   }
 })
 
