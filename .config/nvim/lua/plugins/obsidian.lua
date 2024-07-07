@@ -41,36 +41,36 @@ return {
     -- Optional, configure key mappings. These are the defaults. If you don't want to set any keymappings this
     -- way then set 'mappings = {}'.
     mappings = {
-      ["<leader>Od"] = {
-        action = function()
-          return "<cmd>ObsidianToday<CR>"
-        end,
-        opts = { buffer = true, expr = true, desc = "Obsidian: Open today's daily note" },
-      },
-      ["<leader>Oo"] = {
-        action = function()
-          return "<cmd>ObsidianOpen<CR>"
-        end,
-        opts = { buffer = true, expr = true, desc = "Obsidian: Open in Obsidian" },
-      },
-      ["<leader>Ofp"] = {
-        action = function()
-          return "<cmd>ObsidianQuickSwitch<CR>"
-        end,
-        opts = { buffer = true, expr = true, desc = "Obsidian: Search Files" },
-      },
-      ["<leader>Ofa"] = {
-        action = function()
-          return "<cmd>ObsidianSearch<CR>"
-        end,
-        opts = { buffer = true, expr = true, desc = "Obsidian: Search In Files" },
-      },
-      ["<leader>On"] = {
-        action = function()
-          return "<cmd>ObsidianNew<CR>"
-        end,
-        opts = { buffer = true, expr = true, desc = "Obsidian: Create new note" },
-      },
+      -- ["<leader>Od"] = {
+      --   action = function()
+      --     return "<cmd>ObsidianToday<CR>"
+      --   end,
+      --   opts = { buffer = true, expr = true, desc = "Obsidian: Open today's daily note" },
+      -- },
+      -- ["<leader>Oo"] = {
+      --   action = function()
+      --     return "<cmd>ObsidianOpen<CR>"
+      --   end,
+      --   opts = { buffer = true, expr = true, desc = "Obsidian: Open in Obsidian" },
+      -- },
+      -- ["<leader>Ofp"] = {
+      --   action = function()
+      --     return "<cmd>ObsidianQuickSwitch<CR>"
+      --   end,
+      --   opts = { buffer = true, expr = true, desc = "Obsidian: Search Files" },
+      -- },
+      -- ["<leader>Ofa"] = {
+      --   action = function()
+      --     return "<cmd>ObsidianSearch<CR>"
+      --   end,
+      --   opts = { buffer = true, expr = true, desc = "Obsidian: Search In Files" },
+      -- },
+      -- ["<leader>On"] = {
+      --   action = function()
+      --     return "<cmd>ObsidianNew<CR>"
+      --   end,
+      --   opts = { buffer = true, expr = true, desc = "Obsidian: Create new note" },
+      -- },
       -- Overrides the 'gf' mapping to work on markdown/wiki links within your vault.
       ["gf"] = {
         action = function()
