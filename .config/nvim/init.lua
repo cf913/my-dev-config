@@ -25,6 +25,21 @@ require("lazy").setup({
   spec = {
     { import = "plugins" },
     {
+      'stevearc/conform.nvim',
+      opts = {
+        format_on_save = {
+          timeout_ms = 500,
+          lsp_format = "fallback",
+        },
+        formatters_by_ft = {
+          -- Use a sub-list to run only the first available formatter
+          javascript = { { "prettier" } },
+          typescript = { { "prettier" } },
+          typescriptreact = { { "prettier" } },
+        },
+      },
+    },
+    {
       "nvim-pack/nvim-spectre",
       build = false,
       cmd = "Spectre",
@@ -90,7 +105,7 @@ require("lazy").setup({
     },
     { 'hrsh7th/cmp-nvim-lsp' },
     { 'L3MON4D3/LuaSnip' },
-    { 'prettier/vim-prettier' },
+    -- { 'prettier/vim-prettier' },
     {
       "karb94/neoscroll.nvim"
     },
