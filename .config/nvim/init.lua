@@ -24,7 +24,53 @@ vim.g.maplocalleader = "\\" -- Same for `maplocalleader`
 require("lazy").setup({
   spec = {
     { import = "plugins" },
-    { "Bilal2453/luvit-meta",             lazy = true }, -- optional `vim.uv` typings
+    {
+      "nvim-pack/nvim-spectre",
+      build = false,
+      cmd = "Spectre",
+      opts = { open_cmd = "noswapfile vnew" },
+      -- stylua: ignore
+      keys = {
+        { "<leader>sr", function() require("spectre").toggle() end, desc = "Replace in Files (Spectre)" },
+      },
+    },
+    {
+      'gelguy/wilder.nvim',
+      opts = {
+        modes = { ':', '/', '?' }
+      }
+    },
+    -- {
+    --   "vhyrro/luarocks.nvim",
+    --   priority = 1000,
+    --   config = true,
+    -- },
+    -- {
+    --   "nvim-neorg/neorg",
+    --   dependencies = { "luarocks.nvim" },
+    --   version = "*",
+    --   config = function()
+    --     require("neorg").setup {
+    --       load = {
+    --         ["core.defaults"] = {},
+    --         ["core.concealer"] = {},
+    --         ["core.dirman"] = {
+    --           config = {
+    --             workspaces = {
+    --               notes = "~/norg/notes",
+    --               journal = "~/norg/journal",
+    --             },
+    --             default_workspace = "notes",
+    --           },
+    --         },
+    --       },
+    --     }
+    --
+    --     vim.wo.foldlevel = 99
+    --     vim.wo.conceallevel = 2
+    --   end,
+    -- },
+    { "Bilal2453/luvit-meta",             azy = true }, -- optional `vim.uv` typings
     -- { 'j-hui/fidget.nvim', opts = {}},
     { 'VonHeikemen/lsp-zero.nvim',        branch = 'v3.x' },
     { 'williamboman/mason.nvim' },

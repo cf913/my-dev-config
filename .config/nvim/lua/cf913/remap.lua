@@ -22,6 +22,11 @@ vim.keymap.set("n", "|", ":vsplit<CR>")
 
 vim.keymap.set("n", "<leader>S", ":set ic!<CR>", { desc = "Toggle Search SmartCase" })
 
+-- SET
+vim.keymap.set("n", "<leader>S", ":set ic!<CR>", { desc = "Toggle Search SmartCase" })
+vim.keymap.set("n", "<leader>sc2", ":set conceallevel=2<CR>", { desc = "Set conceallevel 2" })
+vim.keymap.set("n", "<leader>sc0", ":set conceallevel=0<CR>", { desc = "Set conceallevel 2" })
+
 vim.keymap.set("n", "<leader>d", ":lua vim.diagnostic.open_float(nil, {scope=\"cursor\"})<CR>")
 
 

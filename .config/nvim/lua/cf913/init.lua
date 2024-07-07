@@ -1,4 +1,5 @@
 require("cf913.remap")
+
 vim.o.number = true         -- Enable line numbers
 vim.o.relativenumber = true -- Enable relative line numbers
 vim.o.tabstop = 2           -- Number of spaces a tab represents
