@@ -10,8 +10,13 @@
 !.config/alacritty/
 !.config/alacritty/**
 
+!.config/neovide/
+!.config/neovide/**
+
 !.tmux.conf
 
 !.zshrc
+
+!.wezterm.lua
 
 

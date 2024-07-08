@@ -1,5 +1,8 @@
 return {
   "supermaven-inc/supermaven-nvim",
+  keys = {
+    { "<leader>TS" },
+  },
   opts = {
     color = {
       suggestion_color = "#ffffff",

@@ -4,12 +4,12 @@ return {
   priority = 1000,
   config = function()
     require("tokyonight").setup({
-      transparent = true,
+      -- transparent = true,
       style = 'night',
       styles = {
-        sidebars = "transparent",
-        floats = "transparent",
-        statusline = "transparent",
+        -- sidebars = "transparent",
+        -- floats = "transparent",
+        -- statusline = "transparent",
       },
       on_colors = function(colors)
         colors.bg_statusline = colors

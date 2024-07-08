@@ -28,21 +28,21 @@ alias open-edna2="cd ~/Projects/edna2/edna2-mobile && code . && yarn ios"
 alias open-app="cd ~/Projects/expo/budget-keepr && zed . && npm run ios"
 
 # vim open projects
-alias vb="cd ~/Projects/expo/budget-keepr && vim ."
-alias tvb="tmux new -A -s b \; send-keys -t b.0 'cd ~/Projects/expo/budget-keepr && vim .' ENTER \;"
-alias va="cd ~/Projects/expo/agendax-app && vim ."
+alias vb="cd ~/Projects/expo/budget-keepr && vim"
+alias tvb="tmux new -A -s b \; send-keys -t b.0 'cd ~/Projects/expo/budget-keepr && vim' ENTER \;"
+alias va="cd ~/Projects/expo/agendax-app && vim"
 
-alias vbsf="cd ~/Projects/expo/budget-keepr/supabase/functions && vim ."
+alias vbsf="cd ~/Projects/expo/budget-keepr/supabase/functions && vim"
 
-alias vg="cd ~/Projects/galorama && vim ."
+alias vg="cd ~/Projects/galorama && vim"
 
-alias vc="vim ~/"
-alias vv="cd ~/.config/nvim && vim ."
+alias vc="cd ~/ && vim"
+alias vv="cd ~/.config/nvim && vim"
 alias vz="vim ~/.zshrc"
 
-alias vui="cd ~/Projects/expo/chad-ui && vim ."
+alias vui="cd ~/Projects/expo/chad-ui && vim"
 alias tvo="tmux new -A -s obsidian \; send-keys -t obsidian.0 'vim ~/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/Vault' ENTER \;"
-alias vo="vim ~/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/Vault"
+alias vo="cd ~/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/Vault && vim"
 
 # zed open projects
 alias open-ui="cd ~/Projects/expo/chad-ui && zed . && npm run ios"
@@ -58,7 +58,8 @@ alias tn="tmux new -A -s"
 
 #alias npm="pnpm"
 #alias nnpm="npm"
-alias vim="nvim"
+alias vim="neovide"
+# alias vim="nvim"
 alias ls="eza --icons=always"
 alias cd="z"
 alias dev="tmux new -A -s session \; send-keys -t session.0 'npm run tmux:start' ENTER \;"

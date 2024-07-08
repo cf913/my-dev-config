@@ -2,7 +2,6 @@ vim.g.mapleader = " "
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.inccommand = "split"
-vim.opt.mouse = ""
 
 -- save this
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
@@ -30,7 +29,7 @@ vim.keymap.set("n", "<leader>sc0", ":set conceallevel=0<CR>", { desc = "Set conc
 vim.keymap.set("n", "<leader>d", ":lua vim.diagnostic.open_float(nil, {scope=\"cursor\"})<CR>")
 
 
-vim.keymap.set({ "n", "v" }, "<leader>ts", ":SupermavenToggle<CR>", { desc = "Toggle Supermaven" })
+vim.keymap.set({ "n", "v" }, "<leader>Ts", ":SupermavenToggle<CR>", { desc = "Toggle Supermaven" })
 
 vim.keymap.set({ "n", "v" }, "<leader>tn", ":tabN<CR>", { desc = "Tab Next" })
 vim.keymap.set({ "n", "v" }, "<leader>tp", ":tabp<CR>", { desc = "Tab Previous" })

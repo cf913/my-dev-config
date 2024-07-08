@@ -1,0 +1,16 @@
+fork = false
+frame = "buttonless"
+idle = true
+maximized = false
+no-multigrid = false
+srgb = false
+tabs = false
+title-hidden = true
+vsync = true
+wsl = false
+
+[font]
+normal = { family = "MesloLGM Nerd Font", style = "Regular" }
+size = 14
+
+
