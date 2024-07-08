@@ -10,7 +10,7 @@ vim.o.wrap = false          -- Disable line wrapping
 vim.o.cursorline = true     -- Highlight the current line
 vim.o.termguicolors = true  -- Enable 24-bit RGB colors
 vim.o.conceallevel = 2
--- vim.opt.mouse = ""
+vim.opt.mouse = ""
 
 if vim.g.neovide then
   -- Put anything you want to happen only in Neovide here
@@ -37,10 +37,10 @@ if vim.g.neovide then
 
   vim.g.neovide_hide_mouse_when_typing = true
 
-  -- vim.g.neovide_scroll_animation_length = 0.1
+  vim.g.neovide_scroll_animation_length = 0.1
   vim.g.neovide_refresh_rate = 120
   vim.g.neovide_confirm_quit = true
-  vim.g.neovide_cursor_animation_length = 0.1
+  vim.g.neovide_cursor_animation_length = 0.05
   vim.g.neovide_cursor_animate_in_insert_mode = true
   -- not sure if i like smooth inserts or not. WIll have to test both.
 end
