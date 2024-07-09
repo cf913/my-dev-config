@@ -58,7 +58,7 @@ alias tn="tmux new -A -s"
 
 #alias npm="pnpm"
 #alias nnpm="npm"
-alias vim="neovide"
+alias vim="nvim"
 # alias vim="nvim"
 alias ls="eza --icons=always"
 alias cd="z"

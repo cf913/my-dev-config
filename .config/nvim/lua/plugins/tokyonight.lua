@@ -3,13 +3,32 @@ return {
   lazy = false,
   priority = 1000,
   config = function()
+    if vim.g.neovide then
+      require("tokyonight").setup({
+        -- transparent = true,
+        style = 'night',
+        styles = {
+          -- sidebars = "transparent",
+          -- floats = "transparent",
+          -- statusline = "transparent",
+        },
+        on_colors = function(colors)
+          colors.bg_statusline = colors
+              .none -- To check if its working try something like "#ff00ff" instead of colors.none
+        end,
+        on_highlights = function(highlights)
+          highlights.TreesitterContext = { bg = "NONE" }
+          highlights.TreesitterContextLineNumber = { bg = "NONE" }
+        end,
+      })
+    end
     require("tokyonight").setup({
-      -- transparent = true,
+      transparent = true,
       style = 'night',
       styles = {
-        -- sidebars = "transparent",
-        -- floats = "transparent",
-        -- statusline = "transparent",
+        sidebars = "transparent",
+        floats = "transparent",
+        statusline = "transparent",
       },
       on_colors = function(colors)
         colors.bg_statusline = colors

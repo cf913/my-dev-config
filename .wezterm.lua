@@ -20,12 +20,26 @@ config.colors = {
   selection_fg = "#f3d9c4",
   ansi = { "#214969", "#E52E2E", "#44FFB1", "#FFE073", "#0FC5ED", "#a277ff", "#24EAF7", "#24EAF7" },
   brights = { "#214969", "#E52E2E", "#44FFB1", "#FFE073", "#A277FF", "#a277ff", "#24EAF7", "#24EAF7" },
+  tab_bar = {
+    background = "rgba(0,0,0,0)",
+    active_tab = {
+      -- The color of the background area for the tab
+      bg_color = 'rgba(0,0,0,0)',
+      fg_color = '#47FF9C',
+    },
+    inactive_tab = {
+      -- The color of the background area for the tab
+      bg_color = 'rgba(0,0,0,0)',
+      fg_color = '#333333',
+      italic = true
+    }
+  },
 }
 
 -- config.font = wezterm.font("MesloLGS Nerd Font Mono", {weight = 'Medium'})
 config.freetype_load_flags = 'NO_HINTING'
-config.font = wezterm.font('JetBrains Mono', { weight = 'Medium' })
-config.font_size = 15
+config.font = wezterm.font('FiraCode Nerd Font', { weight = 'Medium' })
+config.font_size = 14
 -- config.freetype_load_target = 'Normal'
 -- config.freetype_render_target = 'Normal'
 -- config.harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' }
@@ -34,13 +48,15 @@ config.font_size = 15
 config.use_fancy_tab_bar = false
 config.tab_bar_at_bottom = true
 config.hide_tab_bar_if_only_one_tab = true
+config.show_new_tab_button_in_tab_bar = false
 
 config.window_padding = {
   left = 0,
   right = 0,
-  top = 16,
+  top = 10,
   bottom = 0,
 }
+
 
 config.window_decorations = "RESIZE"
 config.window_background_opacity = 0.75
