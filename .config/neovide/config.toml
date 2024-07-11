@@ -3,6 +3,7 @@ frame = "buttonless"
 idle = true
 maximized = false
 no-multigrid = false
+neovim-bin = '/opt/homebrew/bin/nvim'
 srgb = false
 tabs = false
 title-hidden = true

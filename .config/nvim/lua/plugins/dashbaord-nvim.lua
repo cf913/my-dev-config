@@ -9,6 +9,12 @@ return {
       },
       shortcut = {
         { desc = '󰊳 Update', group = '@property', action = 'Lazy update', key = 'u' },
+        -- {
+        --   desc = ' dotfiles',
+        --   group = 'Number',
+        --   action = 'Telescope dotfiles',
+        --   key = 'd',
+        -- },
         {
           icon = ' ',
           icon_hl = '@variable',

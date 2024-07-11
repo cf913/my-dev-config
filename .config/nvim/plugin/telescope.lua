@@ -26,6 +26,12 @@ vim.keymap.set('n', '<LEADER>jd', '<cmd>lua require"telescope.builtin".lsp_defin
   { noremap = true, silent = true })
 vim.keymap.set('n', '<LEADER>jv', '<cmd>lua require"telescope.builtin".lsp_definitions({jump_type="vsplit"})<CR>',
   { noremap = true, silent = true })
-vim.keymap.set('n', '<LEADER>eb', '<cmd>NvimTreeToggle<CR>', {})
-vim.keymap.set('n', '<LEADER>ee', '<cmd>NvimTreeFocus<CR>', {})
-vim.keymap.set('n', '<LEADER>E', '<cmd>NvimTreeFocus<CR>', {})
+
+
+-- vim.keymap.set('n', '<LEADER>eb', '<cmd>NvimTreeToggle<CR>', {})
+-- vim.keymap.set('n', '<LEADER>ee', '<cmd>NvimTreeFocus<CR>', {})
+-- vim.keymap.set('n', '<LEADER>E', '<cmd>NvimTreeFocus<CR>', {})
+-- vim.keymap.set("n", '<leader>fe', function()
+--     require("neo-tree.command").execute({ toggle = true, dir = vim.uv.cwd() })
+--   end,
+--   { desc = "Explorer NeoTree (cwd)" })

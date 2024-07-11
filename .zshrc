@@ -17,7 +17,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="robbyrussell"
 
-ENABLE_CORRECTION="true"
+# ENABLE_CORRECTION="true"
 
 plugins=(git)
 
