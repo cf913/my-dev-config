@@ -47,25 +47,28 @@ return {
     {
       "<leader>fe",
       function()
-        require("neo-tree.command").execute({ toggle = true, dir = vim.uv.cwd() })
+        require("neo-tree.command").execute({ reveal = true, dir = vim.uv.cwd() })
       end,
       desc = "Explorer NeoTree (cwd)",
     },
     -- { "<leader>e", "<leader>fe", desc = "Explorer NeoTree (Root Dir)", remap = true },
-    { "<leader>E", "<leader>fe", desc = "Explorer NeoTree (cwd)", remap = true },
+    { "<leader>e", "<leader>fe", desc = "Explorer NeoTree (cwd)", remap = true },
     {
       "<leader>ge",
       function()
-        require("neo-tree.command").execute({ source = "git_status", toggle = true })
+        require("neo-tree.command").execute({ source = "git_status" })
       end,
       desc = "Git Explorer",
     },
     {
       "<leader>be",
       function()
-        require("neo-tree.command").execute({ source = "buffers", toggle = true })
+        require("neo-tree.command").execute({ source = "buffers", reveal = true })
       end,
       desc = "Buffer Explorer",
     },
   },
+  opts = {
+    reveal = true
+  }
 }
