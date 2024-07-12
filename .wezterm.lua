@@ -11,8 +11,9 @@ config.max_fps = 240
 -- For example, changing the color scheme:
 config.colors = {
   foreground = "#CBE0F0",
-  background = "#011423",
+  -- background = "#011423",
   -- background = "#000000",
+  background = "#1A1B27",
   cursor_bg = "#47FF9C",
   cursor_border = "#47FF9C",
   cursor_fg = "#011423",
@@ -36,8 +37,9 @@ config.colors = {
   },
 }
 
-config.font = wezterm.font("MesloLGS Nerd Font Mono", { weight = 'Medium' })
--- config.font = wezterm.font('FiraCode Nerd Font', { weight = 'Regular' })
+-- config.font = wezterm.font("MesloLGS Nerd Font Mono", { weight = 'Medium' })
+config.freetype_load_flags = 'NO_HINTING'
+config.font = wezterm.font('FiraCode Nerd Font', { weight = 'Regular' })
 config.font_size = 14
 -- config.freetype_load_target = 'Normal'
 -- config.freetype_render_target = 'Normal'
@@ -50,15 +52,15 @@ config.hide_tab_bar_if_only_one_tab = true
 config.show_new_tab_button_in_tab_bar = false
 
 config.window_padding = {
-  left = 0,
+  left = 8,
   right = 0,
-  top = 10,
-  bottom = 0,
+  top = 5,
+  bottom = 5,
 }
 
 
 config.window_decorations = "RESIZE"
-config.window_background_opacity = 0.55
+config.window_background_opacity = 0.85
 config.macos_window_background_blur = 30
 
 -- and finally, return the configuration to wezterm
