@@ -25,6 +25,12 @@ require("lazy").setup({
   spec = {
     { import = "plugins" },
     {
+      'numToStr/Navigator.nvim',
+      config = function()
+        require('Navigator').setup()
+      end
+    },
+    {
       'stevearc/conform.nvim',
       opts = {
         format_on_save = {
@@ -153,3 +159,10 @@ require("lazy").setup({
 vim.g.markdown_fenced_languages = {
   "ts=typescript"
 }
+local navigator = require('Navigator')
+
+vim.keymap.set({ 'n', 't' }, '<C-h>', navigator.down, { desc = 'TMUX: down pane' })
+vim.keymap.set({ 'n', 't' }, '<C-l>', navigator.right, { desc = 'TMUX: right pane' })
+vim.keymap.set({ 'n', 't' }, '<C-k>', navigator.up, { desc = 'TMUX: up pane' })
+vim.keymap.set({ 'n', 't' }, '<C-j>', navigator.down, { desc = 'TMUX: down pane' })
+vim.keymap.set({ 'n', 't' }, '<C-p>', navigator.previous, { desc = 'TMUX: previous pane' })

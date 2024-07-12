@@ -11,13 +11,13 @@ opacity = 0.75
 # startup_mode="SimpleFullScreen"
 blur = true
 decorations = "ButtonLess"
-padding = { x = 4, y = 2  }
+padding = { x = 8, y = 8  }
 resize_increments = true
 
 [font]
 normal = { family = "FiraCode Nerd Font", style = "Regular" }
 size = 14
 
-[shell]
-program = "/bin/zsh"
-args = ["-l", "-c", "tmux"]
+# [shell]
+# program = "/bin/zsh"
+# args = ["-l", "-c", "tmux new-session -A -s main"]

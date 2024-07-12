@@ -55,6 +55,7 @@ alias tks="tmux kill-server"
 alias tls="tmux ls"
 alias ta="tmux attach"
 alias tn="tmux new -A -s"
+alias tm="tmux new -A -s main"
 
 #alias npm="pnpm"
 #alias nnpm="npm"
