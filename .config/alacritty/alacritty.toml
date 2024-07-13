@@ -13,6 +13,7 @@ blur = true
 decorations = "ButtonLess"
 padding = { x = 8, y = 8  }
 resize_increments = true
+option_as_alt = "OnlyLeft"
 
 [font]
 normal = { family = "FiraCode Nerd Font", style = "Regular" }

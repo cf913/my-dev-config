@@ -131,8 +131,8 @@ vim.g.markdown_fenced_languages = {
 }
 local navigator = require('Navigator')
 
-vim.keymap.set({ 'n', 't' }, '<C-h>', navigator.down, { desc = 'TMUX: down pane' })
-vim.keymap.set({ 'n', 't' }, '<C-l>', navigator.right, { desc = 'TMUX: right pane' })
-vim.keymap.set({ 'n', 't' }, '<C-k>', navigator.up, { desc = 'TMUX: up pane' })
-vim.keymap.set({ 'n', 't' }, '<C-j>', navigator.down, { desc = 'TMUX: down pane' })
+vim.keymap.set({ 'n', 't' }, '<A-h>', navigator.down, { desc = 'TMUX: down pane' })
+vim.keymap.set({ 'n', 't' }, '<A-l>', navigator.right, { desc = 'TMUX: right pane' })
+vim.keymap.set({ 'n', 't' }, '<A-k>', navigator.up, { desc = 'TMUX: up pane' })
+vim.keymap.set({ 'n', 't' }, '<A-j>', navigator.down, { desc = 'TMUX: down pane' })
 -- vim.keymap.set({ 'n', 't' }, '<C-p>', navigator.previous, { desc = 'TMUX: previous pane' })

@@ -13,7 +13,7 @@ return {
         globalstatus = true,
         disabled_filetypes = { statusline = { "dashboard", "alpha" } },
       },
-      sections = {
+      tabline = {
         lualine_a = { { "mode", icon = "" } },
         lualine_b = { { "branch", icon = "" } },
         lualine_c = {
@@ -55,12 +55,23 @@ return {
         },
         lualine_z = {
           {
-            "datetime",
-            style = "  %X",
-          },
+            'tabs',
+            tab_max_length = 40,            -- Maximum width of each tab. The content will be shorten dynamically (example: apple/orange -> a/orange)
+            max_length = vim.o.columns / 3, -- Maximum width of tabs component.
+            mode = 2,                       -- 0: Shows tab_nr
+            use_mode_colors = true,
+          }
         },
       },
-
+      sections = {},
+      winbar = {
+        lualine_a = {},
+        lualine_b = {},
+        lualine_c = { 'filename' },
+        lualine_x = {},
+        lualine_y = {},
+        lualine_z = {}
+      },
       extensions = { "lazy", "toggleterm", "mason", "neo-tree", "trouble" },
     }
   end,
