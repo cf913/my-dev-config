@@ -3,6 +3,11 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.inccommand = "split"
 
+vim.keymap.set("n", "<leader>1", vim.cmd.tabfirst, { desc = "Tab: First" })
+vim.keymap.set("n", "<leader>2", "2gt", { desc = "Tab: 2nd" })
+vim.keymap.set("n", "<leader>3", "3gt", { desc = "Tab: 3nd" })
+vim.keymap.set("n", "<leader>0", vim.cmd.tablast, { desc = "Tab: Last" })
+
 -- save this
 vim.keymap.set("n", "<leader>w", vim.cmd.w, { desc = "Write Buffer" })
 vim.keymap.set("n", "<leader>q", vim.cmd.close, { desc = "Close Buffer" })
