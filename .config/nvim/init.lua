@@ -42,6 +42,7 @@ require("lazy").setup({
           javascript = { { "prettier" } },
           typescript = { { "prettier" } },
           typescriptreact = { { "prettier" } },
+          css = { { "prettier" } }
         },
       },
     },
@@ -63,38 +64,7 @@ require("lazy").setup({
         modes = { ':', '/', '?' }
       }
     },
-    -- {
-    --   "vhyrro/luarocks.nvim",
-    --   priority = 1000,
-    --   config = true,
-    -- },
-    -- {
-    --   "nvim-neorg/neorg",
-    --   dependencies = { "luarocks.nvim" },
-    --   version = "*",
-    --   config = function()
-    --     require("neorg").setup {
-    --       load = {
-    --         ["core.defaults"] = {},
-    --         ["core.concealer"] = {},
-    --         ["core.dirman"] = {
-    --           config = {
-    --             workspaces = {
-    --               notes = "~/norg/notes",
-    --               journal = "~/norg/journal",
-    --             },
-    --             default_workspace = "notes",
-    --           },
-    --         },
-    --       },
-    --     }
-    --
-    --     vim.wo.foldlevel = 99
-    --     vim.wo.conceallevel = 2
-    --   end,
-    -- },
     { "Bilal2453/luvit-meta",             azy = true }, -- optional `vim.uv` typings
-    -- { 'j-hui/fidget.nvim', opts = {}},
     { 'VonHeikemen/lsp-zero.nvim',        branch = 'v3.x' },
     { 'williamboman/mason.nvim' },
     { 'williamboman/mason-lspconfig.nvim' },
@@ -165,4 +135,4 @@ vim.keymap.set({ 'n', 't' }, '<C-h>', navigator.down, { desc = 'TMUX: down pane'
 vim.keymap.set({ 'n', 't' }, '<C-l>', navigator.right, { desc = 'TMUX: right pane' })
 vim.keymap.set({ 'n', 't' }, '<C-k>', navigator.up, { desc = 'TMUX: up pane' })
 vim.keymap.set({ 'n', 't' }, '<C-j>', navigator.down, { desc = 'TMUX: down pane' })
-vim.keymap.set({ 'n', 't' }, '<C-p>', navigator.previous, { desc = 'TMUX: previous pane' })
+-- vim.keymap.set({ 'n', 't' }, '<C-p>', navigator.previous, { desc = 'TMUX: previous pane' })
