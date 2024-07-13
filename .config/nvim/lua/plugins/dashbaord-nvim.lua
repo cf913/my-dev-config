@@ -3,18 +3,21 @@ return {
   event = 'VimEnter',
   opts = {
     theme = 'hyper',
+    hide = {
+      statusline = false, -- hide statusline default is true
+    },
     config = {
       week_header = {
         enable = true,
       },
       shortcut = {
         { desc = '󰊳 Update', group = '@property', action = 'Lazy update', key = 'u' },
-        -- {
-        --   desc = ' dotfiles',
-        --   group = 'Number',
-        --   action = 'Telescope dotfiles',
-        --   key = 'd',
-        -- },
+        {
+          desc = ' dotfiles',
+          group = 'Number',
+          action = 'Telescope dotfiles',
+          key = 'd',
+        },
         {
           icon = ' ',
           icon_hl = '@variable',
