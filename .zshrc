@@ -68,6 +68,7 @@ alias dev="tmux new -A -s session \; send-keys -t session.0 'npm run tmux:start'
 
 alias sz="source ~/.zshrc"
 alias v="nvim"
+alias lg="lazygit"
 
 eval "$(zoxide init zsh)"
 
