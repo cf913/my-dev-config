@@ -11,7 +11,8 @@ opacity = 1
 startup_mode="SimpleFullScreen"
 blur = true
 decorations = "ButtonLess"
-padding = { x = 5 , y = 9  }
+padding = { x = 3 , y = 2  } # 1440p display
+# padding = { x = 5 , y = 9  } # macbook pro display
 resize_increments = true
 option_as_alt = "OnlyLeft"
 
