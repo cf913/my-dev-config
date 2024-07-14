@@ -47,7 +47,7 @@ return {
     {
       "<leader>fe",
       function()
-        require("neo-tree.command").execute({ reveal = true, dir = vim.uv.cwd(), position = 'right' })
+        require("neo-tree.command").execute({ reveal = true, dir = vim.uv.cwd(), position = 'float' })
       end,
       desc = "Explorer NeoTree (cwd)",
     },
