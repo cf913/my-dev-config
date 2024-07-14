@@ -13,48 +13,16 @@ return {
         globalstatus = true,
         disabled_filetypes = { statusline = { "dashboard", "alpha" } },
       },
-      tabline = {
-        lualine_a = { { "mode", icon = "" } },
-        lualine_b = { { "branch", icon = "" } },
-        lualine_c = {
-          {
-            "diagnostics",
-            symbols = {
-              error = " ",
-              warn = " ",
-              info = " ",
-              hint = "󰝶 "
-            },
-          },
-          { "filetype", icon_only = true,                 separator = "", padding = { left = 1, right = 0 } },
-          { "filename", padding = { left = 1, right = 0 } },
-          { "diff" }
-        },
-        lualine_x = {
-        },
-        lualine_y = {
-          {
-            "progress",
-          },
-          {
-            "location",
-            color = utils.get_hlgroup("Boolean"),
-          },
-        },
-        lualine_z = {
-          {
-            'tabs',
-            tab_max_length = 40,            -- Maximum width of each tab. The content will be shorten dynamically (example: apple/orange -> a/orange)
-            max_length = vim.o.columns / 3, -- Maximum width of tabs component.
-            mode = 2,                       -- 0: Shows tab_nr
-            use_mode_colors = true,
-          }
-        },
-      },
       sections = {
-        lualine_a = {
+        lualine_a = { { "mode", icon = "" } },
+        lualine_b = {
+          { "branch", icon = "" },
+        },
+        lualine_c = {
+          { "filetype", icon_only = true, separator = "", padding = { left = 1, right = 0 } },
           {
             'filename',
+            padding = { left = 1, right = 0 },
             file_status = true,     -- Displays file status (readonly status, modified status)
             newfile_status = false, -- Display new file status (new file means no write after created)
             path = 1,               -- 0: Just the filename
@@ -73,10 +41,28 @@ return {
             }
           }
         },
-        lualine_b = {},
-        lualine_c = {},
-        lualine_x = {},
-        lualine_y = {},
+        lualine_x = {
+          {
+            "diagnostics",
+            always_visible = false,
+            symbols = {
+              error = " ",
+              warn = " ",
+              info = " ",
+              hint = "󰝶 "
+            },
+          },
+          { "diff" }
+        },
+        lualine_y = {
+          {
+            "progress",
+          },
+          {
+            "location",
+            color = utils.get_hlgroup("Boolean"),
+          },
+        },
         lualine_z = {},
       },
       extensions = { "lazy", "toggleterm", "mason", "neo-tree", "trouble" },

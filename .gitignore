@@ -13,6 +13,11 @@
 !.config/neovide/
 !.config/neovide/**
 
+!.tmux/
+!.tmux/plugins/
+!.tmux/plugins/tmux2k/
+!.tmux/plugins/tmux2k/**
+
 !.tmux.conf
 
 !.zshrc
