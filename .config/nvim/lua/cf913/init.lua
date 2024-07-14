@@ -11,6 +11,11 @@ vim.o.cursorline = true     -- Highlight the current line
 vim.o.termguicolors = true  -- Enable 24-bit RGB colors
 vim.o.conceallevel = 2
 vim.o.cmdheight = 0
+
+vim.o.splitbelow = true
+vim.o.splitright = true
+
+vim.opt.scrolloff = 8
 -- vim.opt.mouse = ""
 
 -- NEOVIDE ONLY CONFIG
@@ -35,23 +40,26 @@ if vim.g.neovide then
     ":lua vim.g.neovide_scale_factor = math.min(vim.g.neovide_scale_factor + 0.1,  2.0)<CR>", { silent = true })
   vim.api.nvim_set_keymap("n", "<D-->",
     ":lua vim.g.neovide_scale_factor = math.max(vim.g.neovide_scale_factor - 0.1,  0.1)<CR>", { silent = true })
+  vim.g.neovide_text_gamma = 0.8
+  vim.g.neovide_text_contrast = 0.1
+
+  vim.keymap.set('n', '<D-s>', vim.cmd.w)                                -- Save
+  vim.keymap.set('v', '<D-c>', '"+y', { silent = true, noremap = true }) -- Copy
+  vim.keymap.set('n', '<D-v>', '"+P')                                    -- Paste normal mode
+  vim.keymap.set('v', '<D-v>', '"+P')                                    -- Paste visual mode
+  vim.keymap.set('c', '<D-v>', '<C-R>+')                                 -- Paste command mode
+  vim.keymap.set('i', '<D-v>', '<ESC>l"+Pli')                            -- Paste insert mode
+
+  -- Allow clipboard copy paste in neovim
+  vim.api.nvim_set_keymap('', '<D-v>', '+p<CR>', { noremap = true, silent = true })
+  vim.api.nvim_set_keymap('!', '<D-v>', '<C-R>+', { noremap = true, silent = true })
+  vim.api.nvim_set_keymap('t', '<D-v>', '<C-R>+', { noremap = true, silent = true })
+  vim.api.nvim_set_keymap('v', '<D-v>', '<C-R>+', { noremap = true, silent = true })
 end
 
-vim.keymap.set({ 'n', 'i', 'v' }, '<D-k>', 'ddkP', { desc = 'Move line UP' })
-vim.keymap.set({ 'n', 'i', 'v' }, '<D-j>', 'ddp', { desc = 'Move line DOWN' })
-vim.keymap.set('n', '<D-s>', vim.cmd.w)     -- Save
-vim.keymap.set('v', '<D-c>', '"+y')         -- Copy
-vim.keymap.set('n', '<D-v>', '"+P')         -- Paste normal mode
-vim.keymap.set('v', '<D-v>', '"+P')         -- Paste visual mode
-vim.keymap.set('c', '<D-v>', '<C-R>+')      -- Paste command mode
-vim.keymap.set('i', '<D-v>', '<ESC>l"+Pli') -- Paste insert mode
+vim.keymap.set({ 'n', 'i', 'v' }, '<A-up>', 'ddkP', { desc = 'Move line UP' })
+vim.keymap.set({ 'n', 'i', 'v' }, '<A-down>', 'ddp', { desc = 'Move line DOWN' })
 
-
--- Allow clipboard copy paste in neovim
-vim.api.nvim_set_keymap('', '<D-v>', '+p<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('!', '<D-v>', '<C-R>+', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('t', '<D-v>', '<C-R>+', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('v', '<D-v>', '<C-R>+', { noremap = true, silent = true })
 -- Syntax highlighting and filetype plugins
 vim.cmd('syntax enable')
 vim.cmd('filetype plugin indent on')

@@ -7,16 +7,19 @@ import = [
 TERM = "xterm-256color"
 
 [window]
-opacity = 0.85
+opacity = 1
 startup_mode="SimpleFullScreen"
 blur = true
 decorations = "ButtonLess"
-padding = { x = 8, y = 8  }
+padding = { x = 5 , y = 9  }
 resize_increments = true
 option_as_alt = "OnlyLeft"
 
 [font]
-normal = { family = "FiraCode Nerd Font", style = "Regular" }
+normal = { family = "ZedMono Nerd Font", style = "Extended" }
+bold = { family = "ZedMono Nerd Font", style = "Extended Bold"}
+offset.x = 1  # For letter spacing (default: 0)
+offset.y = 2  # For line spacing (default: 0)
 size = 14
 
 # [shell]

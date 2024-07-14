@@ -24,12 +24,12 @@ vim.g.maplocalleader = "\\" -- Same for `maplocalleader`
 require("lazy").setup({
   spec = {
     { import = "plugins" },
-    {
-      'numToStr/Navigator.nvim',
-      config = function()
-        require('Navigator').setup()
-      end
-    },
+    -- {
+    --   'numToStr/Navigator.nvim',
+    --   config = function()
+    --     require('Navigator').setup()
+    --   end
+    -- },
     {
       'stevearc/conform.nvim',
       opts = {
@@ -64,7 +64,7 @@ require("lazy").setup({
         modes = { ':', '/', '?' }
       }
     },
-    { "Bilal2453/luvit-meta",             azy = true }, -- optional `vim.uv` typings
+    { "Bilal2453/luvit-meta",             lazy = true }, -- optional `vim.uv` typings
     { 'VonHeikemen/lsp-zero.nvim',        branch = 'v3.x' },
     { 'williamboman/mason.nvim' },
     { 'williamboman/mason-lspconfig.nvim' },
@@ -129,10 +129,10 @@ require("lazy").setup({
 vim.g.markdown_fenced_languages = {
   "ts=typescript"
 }
-local navigator = require('Navigator')
-
-vim.keymap.set({ 'n', 't' }, '<A-h>', navigator.down, { desc = 'TMUX: down pane' })
-vim.keymap.set({ 'n', 't' }, '<A-l>', navigator.right, { desc = 'TMUX: right pane' })
-vim.keymap.set({ 'n', 't' }, '<A-k>', navigator.up, { desc = 'TMUX: up pane' })
-vim.keymap.set({ 'n', 't' }, '<A-j>', navigator.down, { desc = 'TMUX: down pane' })
+-- local navigator = require('Navigator')
+--
+-- vim.keymap.set({ 'n', 't' }, '<A-h>', navigator.down, { desc = 'TMUX: down pane' })
+-- vim.keymap.set({ 'n', 't' }, '<A-l>', navigator.right, { desc = 'TMUX: right pane' })
+-- vim.keymap.set({ 'n', 't' }, '<A-k>', navigator.up, { desc = 'TMUX: up pane' })
+-- vim.keymap.set({ 'n', 't' }, '<A-j>', navigator.down, { desc = 'TMUX: down pane' })
 -- vim.keymap.set({ 'n', 't' }, '<C-p>', navigator.previous, { desc = 'TMUX: previous pane' })
