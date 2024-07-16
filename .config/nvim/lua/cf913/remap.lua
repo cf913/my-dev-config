@@ -13,8 +13,8 @@ vim.keymap.set("n", "<leader>w", vim.cmd.w, { desc = "Write Buffer" })
 vim.keymap.set("n", "<leader>q", vim.cmd.close, { desc = "Close Buffer" })
 vim.keymap.set("n", "<leader>Q", ":wa<CR>:qa<CR>", { desc = "Save and quit NVIM" })
 
-vim.keymap.set("n", "<C-n>", vim.cmd.bn, { desc = "Buffer next" })
-vim.keymap.set("n", "<C-p>", vim.cmd.bp, { desc = "Buffer previous" })
+-- vim.keymap.set("n", "<C-n>", vim.cmd.bn, { desc = "Buffer next" })
+-- vim.keymap.set("n", "<C-p>", vim.cmd.bp, { desc = "Buffer previous" })
 
 -- keymap to copy the current selection to the system clipboard_tool
 vim.keymap.set({ "n", "v" }, "<leader>C", "\"*y", { desc = "Clipboard: COPY" })

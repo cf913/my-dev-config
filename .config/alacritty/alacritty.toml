@@ -7,21 +7,21 @@ import = [
 TERM = "xterm-256color"
 
 [window]
-opacity = 1
+opacity = 0.99
 startup_mode="SimpleFullScreen"
 blur = true
 decorations = "ButtonLess"
 resize_increments = true
 option_as_alt = "OnlyLeft"
-padding = { x = 3 , y = 2  } # 1440p display
-# padding = { x = 5 , y = 9  } # macbook pro display
+# padding = { x = 3 , y = 2  } # 1440p display
+padding = { x = 5 , y = 13  } # macbook pro display
 
 [font]
 normal = { family = "ZedMono Nerd Font", style = "Extended" }
 bold = { family = "ZedMono Nerd Font", style = "Extended Bold"}
-offset.x = 1
+offset.x = 0
 offset.y = 2
-size = 16 # 1440p display
+size = 15 # 1440p display
 # size = 14 # macbook pro display
 
 # [shell]

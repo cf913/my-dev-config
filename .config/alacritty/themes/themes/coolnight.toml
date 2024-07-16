@@ -5,7 +5,8 @@
 [colors.primary]
 # background = "#000000"
 # background = '#011423'
-background = "#1A1B27"
+background = '#1C1D2C'
+# background = "#1A1B27"
 foreground = '#CBE0F0'
 
 # Colors the cursor will use if `custom_cursor_colors` is true

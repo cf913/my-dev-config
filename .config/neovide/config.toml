@@ -11,7 +11,7 @@ vsync = false
 wsl = false
 
 [font]
-normal = ["GeistMono Nerd Font"]
-size = 14
+normal = [{family = "FiraCode Nerd Font", style = "Regular"}]
+size = 16
 
 
