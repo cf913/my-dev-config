@@ -70,6 +70,9 @@ alias sz="source ~/.zshrc"
 alias v="nvim"
 alias lg="lazygit"
 
+alias docs-sveltekit="cd ~/Projects/docs/kit/sites/kit.svelte.dev/ && npm run preview"
+alias docs-tailwind="cd ~/Projects/docs/tailwindcss.com && npm run start"
+
 eval "$(zoxide init zsh)"
 
 

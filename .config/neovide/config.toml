@@ -13,8 +13,5 @@ wsl = false
 [font]
 size = 16
 hinting = "full"
-
-[[font.normal]]
-family = "ZedMono Nerd Font"
-style = "Extended"
+normal = { family = "ZedMono Nerd Font", style = "Extended" }
 
