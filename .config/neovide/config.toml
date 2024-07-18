@@ -11,7 +11,10 @@ vsync = false
 wsl = false
 
 [font]
-normal = [{family = "FiraCode Nerd Font", style = "Regular"}]
 size = 16
+hinting = "full"
 
+[[font.normal]]
+family = "ZedMono Nerd Font"
+style = "Extended"
 

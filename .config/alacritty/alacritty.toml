@@ -14,14 +14,15 @@ decorations = "ButtonLess"
 resize_increments = true
 option_as_alt = "OnlyLeft"
 # padding = { x = 3 , y = 2  } # 1440p display
-padding = { x = 5 , y = 13  } # macbook pro display
+padding = { x = 5 , y = 7  } # macbook pro display
 
 [font]
 normal = { family = "ZedMono Nerd Font", style = "Extended" }
 bold = { family = "ZedMono Nerd Font", style = "Extended Bold"}
+# normal = { family = "FiraCode Nerd Font", style = "Regular" }
 offset.x = 0
-offset.y = 2
-size = 15 # 1440p display
+offset.y = 3
+size = 16 # 1440p display
 # size = 14 # macbook pro display
 
 # [shell]

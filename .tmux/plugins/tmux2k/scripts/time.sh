@@ -26,7 +26,7 @@ main() {
     if $show_day_month && $show_military; then
         date +" %a %d/%m %R ${timezone}"
     elif $show_military; then
-        date +" %a %m/%d %R ${timezone}"
+        date +"%a %d %b %R ${timezone}" # <---- using this one
     elif $show_day_month; then
         date +" %a %b %d %I:%M %p ${timezone}"
     else
