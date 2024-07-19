@@ -8,6 +8,11 @@ vim.keymap.set('n', '<leader>fr', builtin.oldfiles, { desc = "Find Recent Files"
 vim.keymap.set('n', '<leader>fk', builtin.keymaps, { desc = "Find Keymaps" })
 vim.keymap.set('n', '<leader>fb', function() builtin.buffers({ sort_mru = true, ignore_current_buffer = true }) end,
   { desc = "Find Buffers", })
+-- vim.keymap.set({ 'n', 'v' }, '<leader>fb',
+--   function()
+--     require("neo-tree.command").execute({ source = "buffers", reveal = true, position = 'float' })
+--   end,
+--   { desc = "Buffer Explorer" })
 vim.keymap.set('n', '<leader>fj', builtin.jumplist, { desc = "Find Jumplist" })
 vim.keymap.set('n', '<leader>fa', builtin.live_grep, { desc = "Search All Files" })
 
