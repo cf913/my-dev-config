@@ -6,7 +6,7 @@ local config = wezterm.config_builder()
 
 -- This is where you actually apply your config choices
 config.front_end = "WebGpu"
-config.max_fps = 240
+config.max_fps = 120
 
 -- For example, changing the color scheme:
 config.colors = {
@@ -42,7 +42,7 @@ config.colors = {
 config.freetype_load_flags = 'NO_HINTING'
 config.font = wezterm.font('JetBrainsMono Nerd Font Propo')
 config.font_size = 14
-config.line_height = 1.1
+config.line_height = 1.05
 -- config.freetype_load_target = 'Normal'
 -- config.freetype_render_target = 'Normal'
 -- config.harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' }
@@ -54,16 +54,24 @@ config.hide_tab_bar_if_only_one_tab = true
 config.show_new_tab_button_in_tab_bar = false
 
 config.window_padding = {
-  left = 8,
+  left = 4,
   right = 0,
-  top = 5,
-  bottom = 5,
+  top = 8,
+  bottom = 0,
 }
 
 
 config.window_decorations = "RESIZE"
 config.window_background_opacity = 1
 config.macos_window_background_blur = 30
+
+config.keys = {
+  {
+    key = 'n',
+    mods = 'SHIFT|CTRL',
+    action = wezterm.action.ToggleFullScreen,
+  },
+}
 
 -- and finally, return the configuration to wezterm
 return config

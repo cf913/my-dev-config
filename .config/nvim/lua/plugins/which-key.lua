@@ -7,7 +7,10 @@ return {
   end,
   opts = {
     preset = "modern",
-    expand = 0,
+    expand = 1,
+    triggers = {
+      { "<leader>", mode = { "n", "v" } },
+    }
   },
   keys = {
     {
