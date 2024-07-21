@@ -8,7 +8,6 @@ TERM = "xterm-256color"
 
 [window]
 opacity = 1
-startup_mode="SimpleFullScreen"
 blur = true
 decorations = "ButtonLess"
 resize_increments = true

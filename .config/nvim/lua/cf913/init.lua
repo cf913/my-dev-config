@@ -15,7 +15,7 @@ vim.o.cmdheight = 0
 vim.o.splitbelow = true
 vim.o.splitright = true
 
-vim.opt.scrolloff = 8
+vim.opt.scrolloff = 6
 -- vim.opt.mouse = ""
 
 -- NEOVIDE ONLY CONFIG

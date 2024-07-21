@@ -40,6 +40,7 @@ return {
     },
   },
   opts = {
-    reveal = true
+    reveal = true,
+    close_if_last_window = true,
   }
 }
