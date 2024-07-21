@@ -21,6 +21,7 @@ return {
           highlights.TreesitterContextLineNumber = { bg = "NONE" }
         end,
       })
+      vim.cmd.colorscheme('tokyonight')
     else
       require("tokyonight").setup({
         transparent = true,
@@ -40,6 +41,6 @@ return {
         end,
       })
     end
-    vim.cmd.colorscheme('tokyonight')
+    -- vim.cmd.colorscheme('tokyonight')
   end,
 }

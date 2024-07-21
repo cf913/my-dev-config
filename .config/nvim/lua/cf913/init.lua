@@ -40,8 +40,9 @@ if vim.g.neovide then
     ":lua vim.g.neovide_scale_factor = math.min(vim.g.neovide_scale_factor + 0.1,  2.0)<CR>", { silent = true })
   vim.api.nvim_set_keymap("n", "<D-->",
     ":lua vim.g.neovide_scale_factor = math.max(vim.g.neovide_scale_factor - 0.1,  0.1)<CR>", { silent = true })
-  vim.g.neovide_text_gamma = 0.8
-  vim.g.neovide_text_contrast = 0.1
+  -- vim.g.neovide_text_gamma = 0.8
+  -- vim.g.neovide_text_contrast = 0.1
+  vim.opt.linespace = 3
 
   vim.keymap.set('n', '<D-s>', vim.cmd.w)                                -- Save
   vim.keymap.set('v', '<D-c>', '"+y', { silent = true, noremap = true }) -- Copy

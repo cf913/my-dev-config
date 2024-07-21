@@ -29,6 +29,7 @@ alias open-app="cd ~/Projects/expo/budget-keepr && zed . && npm run ios"
 
 # vim open projects
 alias vb="cd ~/Projects/expo/budget-keepr && vim ."
+alias vbw="cd ~/Projects/nextjs/capito-web && vim ."
 alias tvb="tmux new -A -s b \; send-keys -t b.0 'cd ~/Projects/expo/budget-keepr && vim .' ENTER \;"
 alias va="cd ~/Projects/expo/agendax-app && vim ."
 

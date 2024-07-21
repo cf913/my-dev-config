@@ -4,6 +4,7 @@ idle = true
 maximized = false
 no-multigrid = false
 neovim-bin = '/opt/homebrew/bin/nvim'
+theme = "auto"
 srgb = false
 tabs = false
 title-hidden = true
@@ -11,7 +12,6 @@ vsync = false
 wsl = false
 
 [font]
-size = 16
+size = 14
 hinting = "full"
-normal = { family = "ZedMono Nerd Font", style = "Extended" }
-
+normal = ["JetBrainsMono Nerd Font Propo"]

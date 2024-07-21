@@ -7,7 +7,7 @@ import = [
 TERM = "xterm-256color"
 
 [window]
-opacity = 0.99
+opacity = 1
 startup_mode="SimpleFullScreen"
 blur = true
 decorations = "ButtonLess"
@@ -17,13 +17,14 @@ option_as_alt = "OnlyLeft"
 padding = { x = 5 , y = 7  } # macbook pro display
 
 [font]
-normal = { family = "ZedMono Nerd Font", style = "Extended" }
-bold = { family = "ZedMono Nerd Font", style = "Extended Bold"}
+normal = { family = "JetBrainsMono Nerd Font Propo"}
+# normal = { family = "ZedMono Nerd Font", style = "Extended" }
+# bold = { family = "ZedMono Nerd Font", style = "Extended Bold"}
 # normal = { family = "FiraCode Nerd Font", style = "Regular" }
 offset.x = 0
-offset.y = 3
-size = 16 # 1440p display
-# size = 14 # macbook pro display
+offset.y = 4
+# size = 16 # 1440p display
+size = 14 # macbook pro display
 
 # [shell]
 # program = "/bin/zsh"
