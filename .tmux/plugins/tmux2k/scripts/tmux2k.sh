@@ -247,7 +247,7 @@ window_list() {
 
     if $icons_only; then
         tmux set-window-option -g window-status-current-format "#[fg=${wbg},bg=${wfg}]${spacer}#W"
-        tmux set-window-option -g window-status-format "#[fg=${gray},bg=${wfg}]${spacer}#W"
+        tmux set-window-option -g window-status-format "#[fg=${gray},bg=${wfg}]${spacer}#I:#W"
     fi
 }
 
