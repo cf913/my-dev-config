@@ -10,7 +10,7 @@ vim.keymap.set("n", "<leader>0", vim.cmd.tablast, { desc = "Tab: Last" })
 
 -- save this
 vim.keymap.set("n", "<leader>w", vim.cmd.w, { desc = "Write Buffer" })
-vim.keymap.set("n", "<leader>qq", vim.cmd.close, { desc = "Close Buffer" })
+vim.keymap.set("n", "<leader>qq", ":bd<cr>", { desc = "Close Buffer" })
 vim.keymap.set("n", "<leader>qa", ":wa<CR>:qa<CR>", { desc = "Save and quit NVIM" })
 
 -- vim.keymap.set("n", "<C-n>", vim.cmd.bn, { desc = "Buffer next" })
