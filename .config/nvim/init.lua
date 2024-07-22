@@ -25,17 +25,23 @@ require("lazy").setup({
   spec = {
     { import = "plugins" },
     {
-      "nvim-pack/nvim-spectre",
-      build = false,
-      cmd = "Spectre",
-      opts = { open_cmd = "noswapfile vnew" },
-      -- stylua: ignore
-      keys = {
-        { "<leader>sr", function() require("spectre").toggle() end,                                 desc = "Replace in Files (Spectre)" },
-        { "<leader>sw", function() require("spectre").open_visual({ select_word = true }) end,      desc = "Replace Selected Word (Spectre)" },
-        { "<leader>sf", function() require("spectre").open_file_search({ select_word = true }) end, desc = "Replace in Current File (Spectre)" },
-      },
+      "m4xshen/hardtime.nvim",
+      dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
+      opts = {
+        max_count = 4
+      }
+    }, {
+    "nvim-pack/nvim-spectre",
+    build = false,
+    cmd = "Spectre",
+    opts = { open_cmd = "noswapfile vnew" },
+    -- stylua: ignore
+    keys = {
+      { "<leader>sr", function() require("spectre").toggle() end,                                 desc = "Replace in Files (Spectre)" },
+      { "<leader>sw", function() require("spectre").open_visual({ select_word = true }) end,      desc = "Replace Selected Word (Spectre)" },
+      { "<leader>sf", function() require("spectre").open_file_search({ select_word = true }) end, desc = "Replace in Current File (Spectre)" },
     },
+  },
     { "Bilal2453/luvit-meta",             lazy = true }, -- optional `vim.uv` typings
     { 'VonHeikemen/lsp-zero.nvim',        branch = 'v3.x' },
     { 'williamboman/mason.nvim' },
