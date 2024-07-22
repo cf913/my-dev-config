@@ -23,16 +23,15 @@ vim.o.cmdheight = 0
 --     '%#lualine_b_normal#%{(v:relnum == 0)?\"\".v:lnum.\" │ \":\"\"}'
 -- vim.opt.statuscolumn =
 --     '%s%=%#CursorLignFold#%{(v:relnum > 2)?\"\".v:relnum.\" │ \":\"\"}' ..
---     -- '%#IblIndent#%{(v:relnum > 3)?\" │ \":\"\"}' ..
 --     '%#BufferInactive#%{(v:relnum == 2)?\"\".v:relnum.\" │ \":\"\"}' ..
 --     '%#CursorLineSign#%{(v:relnum == 1)?\"\".v:relnum.\" │ \":\"\"}' ..
---     -- '%#lualine_b_normal#%{(v:relnum == 0)?\"\".v:lnum.\" \":\"\"}'
 --     '%#CursorLineNr#%{(v:relnum == 0)?\"\".v:lnum.\" │ \":\"\"}'
 vim.opt.statuscolumn =
-    '%s%=%#CursorLignFold#%{(v:relnum > 2)?\"\".v:relnum.\"  \":\"\"}' ..
-    '%#BufferInactive#%{(v:relnum == 2)?\"\".v:relnum.\"  \":\"\"}' ..
-    '%#CursorLineSign#%{(v:relnum == 1)?\"\".v:relnum.\"  \":\"\"}' ..
-    '%#CursorLineNr#%{(v:relnum == 0)?\"\".v:lnum.\"  \":\"\"}'
+    '%s%=%#LineNr4#%{(v:relnum >= 4)?\"\".v:relnum.\"  \":\"\"}' ..
+    '%#LineNr3#%{(v:relnum == 3)?\"\".v:relnum.\"  \":\"\"}' ..
+    '%#LineNr2#%{(v:relnum == 2)?\"\".v:relnum.\"  \":\"\"}' ..
+    '%#LineNr1#%{(v:relnum == 1)?\"\".v:relnum.\"  \":\"\"}' ..
+    '%#LineNr0#%{(v:relnum == 0)?\"\".v:lnum.\"  \":\"\"}'
 
 vim.o.splitbelow = true
 vim.o.splitright = true
