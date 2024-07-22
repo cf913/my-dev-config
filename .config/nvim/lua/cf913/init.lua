@@ -14,12 +14,25 @@ vim.o.cmdheight = 0
 -- vim.opt.statuscolumn = "%s %=%{v:relnum} │%T "
 -- vim.opt.statuscolumn =
 -- "%s%#Function#%=%{v:virtnum < 1 ? (v:relnum ? v:relnum : v:lnum) : (v:virtnum > 0 ? v:relnum : v:lnum)} │%T "
+-- vim.opt.statuscolumn =
+--     '%s%=%#LineNr#%{(v:relnum > 3)?\"\".v:relnum.\" │ \":\"\"}' ..
+--     -- '%#IblIndent#%{(v:relnum > 3)?\" │ \":\"\"}' ..
+--     '%#BufferInactive#%{(v:relnum == 3)?\"\".v:relnum.\" │ \":\"\"}' ..
+--     '%#BufferVisibleMod#%{(v:relnum == 2)?\"\".v:relnum.\" │ \":\"\"}' ..
+--     '%#Changed#%{(v:relnum == 1)?\"\".v:relnum.\" │ \":\"\"}' ..
+--     '%#lualine_b_normal#%{(v:relnum == 0)?\"\".v:lnum.\" │ \":\"\"}'
+-- vim.opt.statuscolumn =
+--     '%s%=%#CursorLignFold#%{(v:relnum > 2)?\"\".v:relnum.\" │ \":\"\"}' ..
+--     -- '%#IblIndent#%{(v:relnum > 3)?\" │ \":\"\"}' ..
+--     '%#BufferInactive#%{(v:relnum == 2)?\"\".v:relnum.\" │ \":\"\"}' ..
+--     '%#CursorLineSign#%{(v:relnum == 1)?\"\".v:relnum.\" │ \":\"\"}' ..
+--     -- '%#lualine_b_normal#%{(v:relnum == 0)?\"\".v:lnum.\" \":\"\"}'
+--     '%#CursorLineNr#%{(v:relnum == 0)?\"\".v:lnum.\" │ \":\"\"}'
 vim.opt.statuscolumn =
-    '%s%=%#BufferInactiveSign#%{(v:relnum > 3)?\" \".v:relnum.\" │ \":\"\"}%' ..
-    '#BufferInactive#%{(v:relnum == 3)?\" \".v:relnum.\" │ \":\"\"}%' ..
-    '#BufferVisibleMod#%{(v:relnum == 2)?\" \".v:relnum.\" │ \":\"\"}%' ..
-    '#Changed#%{(v:relnum == 1)?\" \".v:relnum.\" │ \":\"\"}%' ..
-    '#lualine_b_normal#%{(v:relnum == 0)?\" \".v:lnum.\" │ \":\"\"}'
+    '%s%=%#CursorLignFold#%{(v:relnum > 2)?\"\".v:relnum.\"  \":\"\"}' ..
+    '%#BufferInactive#%{(v:relnum == 2)?\"\".v:relnum.\"  \":\"\"}' ..
+    '%#CursorLineSign#%{(v:relnum == 1)?\"\".v:relnum.\"  \":\"\"}' ..
+    '%#CursorLineNr#%{(v:relnum == 0)?\"\".v:lnum.\"  \":\"\"}'
 
 vim.o.splitbelow = true
 vim.o.splitright = true
