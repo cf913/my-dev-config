@@ -42,7 +42,7 @@ return {
           end,
         })
       end
-      vim.cmd.colorscheme('tokyonight') -- setting
+      -- vim.cmd.colorscheme('tokyonight') -- setting
     end
   },
   {
@@ -100,7 +100,7 @@ return {
       })
       if vim.g.neovide then
       else
-        -- vim.cmd("colorscheme rose-pine") -- setting
+        vim.cmd("colorscheme rose-pine") -- setting
       end
     end
   }

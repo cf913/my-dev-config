@@ -13,8 +13,8 @@ config.colors = {
   foreground = "#CBE0F0",
   -- background = "#011423",
   -- background = "#000000",
-  background = "#1A1B27", -- tokyonight
-  -- background = "#191724", -- rose-pine
+  -- background = "#1A1B27", -- tokyonight
+  background = "#191724", -- rose-pine
   cursor_bg = "#47FF9C",
   cursor_border = "#47FF9C",
   cursor_fg = "#011423",
@@ -39,11 +39,11 @@ config.colors = {
 }
 
 -- config.font = wezterm.font("MesloLGS Nerd Font Mono", { weight = 'Medium' })
-config.freetype_load_flags = 'NO_HINTING'
+-- config.freetype_load_flags = 'NO_HINTING'
 config.font = wezterm.font('JetBrainsMono Nerd Font Propo')
-config.font_size = 14
-config.line_height = 1.05
--- config.freetype_load_target = 'Normal'
+config.font_size = 13
+config.line_height = 1.2
+config.cell_width = 0.94
 -- config.freetype_render_target = 'Normal'
 -- config.harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' }
 

@@ -4,6 +4,7 @@ vim.keymap.set('n', '<leader>fp', builtin.find_files, { desc = "Find Files" })
 vim.keymap.set('n', '<leader>fh', '<cmd>Telescope find_files find_command=rg,--ignore,--hidden,--files,-u<CR>',
   { desc = "Find Hidden Files" })
 vim.keymap.set('n', '<leader>fg', builtin.git_files, { desc = "Find Git Files" })
+vim.keymap.set('n', '<leader>fc', builtin.colorscheme, { desc = "Find Colorscheme" })
 vim.keymap.set('n', '<leader>fr', builtin.oldfiles, { desc = "Find Recent Files" })
 vim.keymap.set('n', '<leader>fk', builtin.keymaps, { desc = "Find Keymaps" })
 vim.keymap.set('n', '<leader>fb', function() builtin.buffers({ sort_mru = true, ignore_current_buffer = true }) end,
