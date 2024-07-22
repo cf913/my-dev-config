@@ -54,7 +54,7 @@ config.hide_tab_bar_if_only_one_tab = true
 config.show_new_tab_button_in_tab_bar = false
 
 config.window_padding = {
-  left = 4,
+  left = 0,
   right = 0,
   top = 8,
   bottom = 0,

@@ -10,7 +10,8 @@ return {
       highlight = { "IblIndent" }
     },
     scope = {
-      highlight = { "NeotestExpandMarker" }
+      -- highlight = { "NeotestExpandMarker" }
+      highlight = { "IblIndent" }
     }
   }
 }
