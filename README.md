@@ -10,4 +10,4 @@ Day coding. Or for a quick edit.
 
 Note: Unable to match the look on both Neovide and Wezterm. Getting close though. Consistency issues with transparency and font rendering on Neovide.
 
-Time spent editing config: too many 😅 (sigh)
+Hours spent editing config: too many 😅 (sigh)
