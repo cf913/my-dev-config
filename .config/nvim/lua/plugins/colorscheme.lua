@@ -6,12 +6,12 @@ return {
     config = function()
       if vim.g.neovide then
         require("tokyonight").setup({
-          -- transparent = true,
+          transparent = true,
           style = 'night',
           styles = {
-            -- sidebars = "transparent",
-            -- floats = "transparent",
-            -- statusline = "transparent",
+            sidebars = "transparent",
+            floats = "transparent",
+            statusline = "transparent",
           },
           on_colors = function(colors)
             colors.bg_statusline = colors
@@ -20,6 +20,11 @@ return {
           on_highlights = function(highlights)
             highlights.TreesitterContext = { bg = "NONE" }
             highlights.TreesitterContextLineNumber = { bg = "NONE" }
+            highlights.LineNr4 = { fg = "#3B4261" }
+            highlights.LineNr3 = { fg = "#4d71a0" }
+            highlights.LineNr2 = { fg = "#6fc1cf" }
+            highlights.LineNr1 = { fg = "#aff1ff" }
+            highlights.LineNr0 = { fg = "#FF9D65", bold = true }
           end,
         })
         vim.cmd.colorscheme('tokyonight')
