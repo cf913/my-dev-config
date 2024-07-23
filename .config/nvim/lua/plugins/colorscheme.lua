@@ -43,7 +43,7 @@ return {
             highlights.LineNr3 = { fg = "#4d71a0" }
             highlights.LineNr2 = { fg = "#6fc1cf" }
             highlights.LineNr1 = { fg = "#aff1ff" }
-            highlights.LineNr0 = { fg = "#FF9D65" }
+            highlights.LineNr0 = { fg = "#FF9D65", bold = true }
           end,
         })
       end
@@ -108,7 +108,7 @@ return {
           LineNr3 = { fg = "#445464" },
           LineNr2 = { fg = "#5D8E97" },
           LineNr1 = { fg = "#7DAEB9" },
-          LineNr0 = { fg = "#bDeEf9" }
+          LineNr0 = { fg = "#bDeEf9", bold = true }
         },
       })
 
