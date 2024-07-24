@@ -27,6 +27,7 @@ require("lazy").setup({
     {
       "m4xshen/hardtime.nvim",
       dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
+      event = "BufReadPre",
       opts = {
         max_count = 6
       }
@@ -44,12 +45,13 @@ require("lazy").setup({
           name = "lazydev",
           group_index = 0, -- set group index to 0 to skip loading LuaLS completions
         })
-      end,
+      end
     },
     { 'hrsh7th/cmp-nvim-lsp' },
     { 'L3MON4D3/LuaSnip' },
     {
       'lewis6991/gitsigns.nvim',
+      event = "BufReadPre",
       opts = {}
     },
   }
