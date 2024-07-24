@@ -7,6 +7,13 @@ return {
     "nvim-lua/plenary.nvim",
     -- see below for full list of optional dependencies 👇
   },
+  keys = {
+    { "<leader>Od",  '<cmd>ObsidianToday<CR>',       desc = "Obsidian: Open today's daily note" },
+    { "<leader>Oo",  '<cmd>ObsidianOpen<CR>',        desc = "Obsidian: Open in Obsidian" },
+    { "<leader>On",  '<cmd>ObsidianNew<CR>',         desc = "Obsidian: Open New Note" },
+    { "<leader>Ofp", '<cmd>ObsidianQuickSwitch<CR>', desc = "Obsidian: Search Files" },
+    { "<leader>Ofa", '<cmd>ObsidianSearch<CR>',      desc = "Obsidian: Search In Files" },
+  },
   opts = {
     notes_subdir = "0 Inbox",
     workspaces = {
