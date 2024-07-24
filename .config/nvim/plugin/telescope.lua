@@ -17,7 +17,7 @@ vim.keymap.set('n', '<leader>fb', function() builtin.buffers({ sort_mru = true, 
 vim.keymap.set('n', '<leader>fj', builtin.jumplist, { desc = "Find Jumplist" })
 vim.keymap.set('n', '<leader>fa', builtin.live_grep, { desc = "Search All Files" })
 
-vim.keymap.set('n', '<LEADER>jd', '<cmd>lua require"telescope.builtin".lsp_definitions()<CR>',
-  { noremap = true, silent = true })
-vim.keymap.set('n', '<LEADER>jv', '<cmd>lua require"telescope.builtin".lsp_definitions({jump_type="vsplit"})<CR>',
-  { noremap = true, silent = true })
+vim.keymap.set('n', '<LEADER>jv', '<cmd>lua require"telescope.builtin".lsp_definitions()<CR>',
+  { noremap = true, silent = true, desc = 'Definition Split' })
+vim.keymap.set('n', '<LEADER>jd', '<cmd>lua require"telescope.builtin".lsp_definitions({jump_type="vsplit"})<CR>',
+  { noremap = true, silent = true, desc = 'Definition' })

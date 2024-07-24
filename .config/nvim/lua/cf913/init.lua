@@ -31,6 +31,8 @@ if vim.g.neovide then
   vim.g.neovide_padding_bottom = 0
   vim.g.neovide_padding_right = 0
   vim.g.neovide_padding_left = 0
+  vim.g.neovide_text_gamma = 0.01
+  vim.g.neovide_text_contrast = 0.01
 
   vim.g.neovide_scale_factor = 1.0
   vim.g.neovide_hide_mouse_when_typing = true
@@ -45,21 +47,13 @@ if vim.g.neovide then
     ":lua vim.g.neovide_scale_factor = math.min(vim.g.neovide_scale_factor + 0.1,  2.0)<CR>", { silent = true })
   vim.api.nvim_set_keymap("n", "<D-->",
     ":lua vim.g.neovide_scale_factor = math.max(vim.g.neovide_scale_factor - 0.1,  0.1)<CR>", { silent = true })
-  vim.opt.linespace = 3
+  vim.opt.linespace = 7
 
   -- g:neovide_transparency should be 0 if you want to unify transparency of content and title bar.
   vim.g.neovide_transparency = 0.2
   vim.g.transparency = 0.8
-  local alpha = function()
-    return string.format("%x", math.floor(255 * (vim.g.transparency or 0.8)))
-  end
-  vim.g.neovide_background_color = "#1A1B27" .. alpha()
 
-  vim.opt.winblend = 70
-  vim.opt.pumblend = 70
   vim.g.neovide_window_blurred = true
-  vim.g.neovide_floating_blur_amount_x = 30.0
-  vim.g.neovide_floating_blur_amount_y = 30.0
 
   vim.keymap.set('n', '<D-s>', vim.cmd.w)                                -- Save
   vim.keymap.set('v', '<D-c>', '"+y', { silent = true, noremap = true }) -- Copy
