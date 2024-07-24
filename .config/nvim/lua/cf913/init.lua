@@ -26,6 +26,8 @@ vim.opt.scrolloff = 6
 
 -- NEOVIDE ONLY CONFIG
 if vim.g.neovide then
+  local default_path = vim.fn.expand("~/")
+  vim.api.nvim_set_current_dir(default_path)
   -- Put anything you want to happen only in Neovide here
   vim.g.neovide_padding_top = 10
   vim.g.neovide_padding_bottom = 0
