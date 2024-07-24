@@ -50,7 +50,7 @@ if vim.g.neovide then
   vim.opt.linespace = 7
 
   -- g:neovide_transparency should be 0 if you want to unify transparency of content and title bar.
-  vim.g.neovide_transparency = 0.2
+  vim.g.neovide_transparency = 0.3
   vim.g.transparency = 0.8
 
   vim.g.neovide_window_blurred = true

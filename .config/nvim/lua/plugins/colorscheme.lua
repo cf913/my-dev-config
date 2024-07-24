@@ -27,11 +27,11 @@ return {
             highlights.LineNr0 = { fg = "#FF9D65", bold = true }
           end,
         })
-        -- vim.cmd.colorscheme('tokyonight')
         local alpha = function()
           return string.format("%x", math.floor(255 * (vim.g.transparency or 0.8)))
         end
         vim.g.neovide_background_color = "#1A1B27" .. alpha()
+        vim.cmd.colorscheme('tokyonight')
       else
         require("tokyonight").setup({
           transparent = true,
@@ -62,6 +62,7 @@ return {
   {
     "rose-pine/neovim",
     name = "rose-pine",
+    lazy = false,
     config = function()
       require("rose-pine").setup({
         variant = "auto",      -- auto, main, moon, or dawn
@@ -126,7 +127,7 @@ return {
           return string.format("%x", math.floor(255 * (vim.g.transparency or 0.8)))
         end
         vim.g.neovide_background_color = "#191724" .. alpha()
-        vim.cmd("colorscheme rose-pine") -- setting
+        -- vim.cmd("colorscheme rose-pine") -- setting
       else
         vim.cmd("colorscheme rose-pine") -- setting
       end
