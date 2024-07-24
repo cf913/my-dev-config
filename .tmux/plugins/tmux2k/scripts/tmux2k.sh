@@ -219,7 +219,7 @@ status_bar() {
                     "#[fg=${!colors[0]},bg=${pl_bg},nobold,nounderscore,noitalics]${r_sep}#[fg=${!colors[1]},bg=${!colors[0]}] $script "
                 pl_bg=${!colors[0]}
             else
-                tmux set-option -ga status-right "#[fg=${!colors[1]},bg=${!colors[0]}] $script "
+                tmux set-option -ga status-right "#[fg=$gray,bg=${!colors[0]}] $script "
             fi
         fi
     done

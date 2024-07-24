@@ -16,8 +16,8 @@ get_percent() {
         cpuvalue=$(ps -A -o %cpu | awk -F. '{s+=$1} END {print s}')
         cpucores=$(sysctl -n hw.logicalcpu)
         cpuusage=$((cpuvalue / cpucores))
-        percent="$cpuusage%"
-        normalize_padding "$percent"
+        percent="$cpuusage"
+        echo "$percent"
         ;;
 
     CYGWIN* | MINGW32* | MSYS* | MINGW*) ;; # TODO - windows compatibility
@@ -37,12 +37,14 @@ get_load() {
 
 main() {
     RATE=$(get_tmux_option "@tmux2k-refresh-rate" 5)
-    cpu_load=$(get_tmux_option "@tmux2k-cpu-display-load" false)
-    if [ "$cpu_load" = true ]; then
-        echo "$(get_load)"
+    cpu_percent=$(get_percent)
+    if [ "$cpu_percent" -gt 50 ]; then
+      echo "#[fg="red"] $cpu_percent%"
+    elif [ "$cpu_percent" -gt 10 ]; then
+      echo "#[fg="orange"] $cpu_percent%"
     else
-        cpu_percent=$(get_percent)
-        echo " $cpu_percent"
+      # echo "#[fg="green"] $cpu_percent%"
+      echo " $cpu_percent%"
     fi
     sleep "$RATE"
 }

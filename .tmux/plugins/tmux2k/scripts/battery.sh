@@ -53,18 +53,16 @@ battery_status() {
 }
 
 battery_label() {
-    if [ "$bat_perc" -gt 90 ]; then
+    if [ "$bat_perc" -gt 75 ]; then
         echo " "
-    elif [ "$bat_perc" -gt 75 ]; then
-        echo " "
     elif [ "$bat_perc" -gt 50 ]; then
-        echo " "
+        echo " "
     elif [ "$bat_perc" -gt 25 ]; then
-        echo " "
+        echo " "
     elif [ "$bat_perc" -gt 10 ]; then
-        echo " "
+        echo "#[fg="orange"] "
     else
-        echo "󱉝 "
+        echo "#[fg="red"] "
     fi
 }
 
@@ -74,11 +72,11 @@ main() {
     bat_label="$(battery_label)"
 
     if [ -z "$bat_stat" ]; then
-        echo "$bat_label $bat_perc%"
+        echo "$bat_label$bat_perc%"
     elif [ -z "$bat_perc" ]; then
         echo "$bat_stat $bat_label"
     else
-        echo "$bat_stat $bat_label $bat_perc%"
+        echo "$bat_stat $bat_label$bat_perc%"
     fi
 }
 

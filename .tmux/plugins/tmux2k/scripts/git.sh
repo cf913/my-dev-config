@@ -94,13 +94,13 @@ get_message() {
                 if [ $(check_empty_symbol "$diff_symbol") == "true" ]; then
                     echo "${changes} $branch"
                 else
-                    echo "$diff_symbol ${changes} $branch"
+                    echo "$diff_symbol${changes} $branch"
                 fi
             else
                 if [ $(check_empty_symbol "$diff_symbol") == "true" ]; then
                     echo "$branch"
                 else
-                    echo "$diff_symbol $branch"
+                    echo "$diff_symbol$branch"
                 fi
             fi
 
