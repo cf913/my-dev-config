@@ -152,7 +152,7 @@ set_theme() {
         show_powerline=false
         text=$bg_main
         plugin_colors=(
-            ["git"]="text green"
+            ["git"]="text gray"
             ["cpu"]="text gray"
             ["ram"]="text light_yellow"
             ["gpu"]="text yellow"
