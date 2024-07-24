@@ -2,7 +2,7 @@
 
 export LC_ALL=en_US.UTF-8
 
-HOSTS="google.com github.com example.com"
+HOSTS="google.com github.com"
 
 get_ssid() {
     case $(uname -s) in
@@ -19,7 +19,7 @@ get_ssid() {
         device_name=$(networksetup -listallhardwareports | grep -A 1 Wi-Fi | grep Device | awk '{print $2}')
         SSID=$(networksetup -getairportnetwork "$device_name" | awk -F ": " '{print $2}')
         if [ -n "$SSID" ]; then
-            printf '%s' " $SSID"
+            printf '%s' "󰖩 $SSID"
         else
             echo '󰈀 Ethernet'
         fi
@@ -38,7 +38,11 @@ main() {
         fi
     done
 
-    echo "$network"
+    if [ "$network" = "Offline" ]; then
+      echo "#[fg="red"]󰖪 $network"
+    else
+      echo "$network"
+    fi
 }
 
 main
