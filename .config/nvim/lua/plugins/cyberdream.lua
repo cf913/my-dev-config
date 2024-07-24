@@ -30,7 +30,7 @@ return {
           LineNr3 = { fg = "#4d71a0" },
           LineNr2 = { fg = "#6fc1cf" },
           LineNr1 = { fg = "#ffeeff" },
-          LineNr0 = { fg = "#ff00ff", bold = true }
+          LineNr0 = { fg = "#ff00ff", bg = "NONE", bold = true }
 
           -- Complete list can be found in `lua/cyberdream/theme.lua`
         },
