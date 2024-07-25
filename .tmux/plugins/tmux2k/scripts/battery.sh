@@ -47,8 +47,8 @@ battery_status() {
     case $status in
     discharging | Discharging) echo '' ;;
     high) echo '' ;;
-    charging) echo '' ;;
-    *) echo '' ;;
+    charging) echo '#[fg="yellow"]' ;;
+    *) echo '#[fg="yellow"]' ;;
     esac
 }
 

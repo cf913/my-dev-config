@@ -73,7 +73,7 @@ if vim.g.neovide then
   end)
   vim.keymap.set({ "n", "v", "o" }, "<D-[>", function()
     if vim.g.neovide_transparency_point >= 0.1 then
-      change_transparency(0.1)
+      change_transparency(-0.1)
     end
   end)
   -- vim.g.neovide_transparency = 0.3
