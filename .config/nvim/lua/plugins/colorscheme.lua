@@ -1,3 +1,6 @@
+local alpha = function()
+  return string.format("%x", math.floor(255 * vim.g.neovide_transparency_point or 0.8))
+end
 return {
   {
     'folke/tokyonight.nvim',
@@ -27,10 +30,8 @@ return {
             highlights.LineNr0 = { fg = "#FF9D65", bold = true }
           end,
         })
-        local alpha = function()
-          return string.format("%x", math.floor(255 * (vim.g.transparency or 0.8)))
-        end
-        vim.g.neovide_background_color = "#1A1B27" .. alpha()
+        -- Set transparency and background color (title bar color)
+        vim.g.neovide_background_color_base = "#2a2839"
         vim.cmd.colorscheme('tokyonight')
       else
         require("tokyonight").setup({
@@ -123,14 +124,13 @@ return {
       })
 
       if vim.g.neovide then
-        local alpha = function()
-          return string.format("%x", math.floor(255 * (vim.g.transparency or 0.8)))
-        end
-        vim.g.neovide_background_color = "#191724" .. alpha()
+        -- Set transparency and background color (title bar color)
+        -- vim.g.neovide_background_color_base = "#262231"
         -- vim.cmd("colorscheme rose-pine") -- setting
       else
         vim.cmd("colorscheme rose-pine") -- setting
       end
+      vim.g.neovide_background_color = vim.g.neovide_background_color_base .. alpha()
     end
   }
 }

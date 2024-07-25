@@ -52,8 +52,30 @@ if vim.g.neovide then
   vim.opt.linespace = 7
 
   -- g:neovide_transparency should be 0 if you want to unify transparency of content and title bar.
+  -- -- Helper function for transparency formatting
+  local alpha = function()
+    return string.format("%x", math.floor(255 * vim.g.neovide_transparency_point or 0.8))
+  end
+  -- Set transparency and background color (title bar color)
   vim.g.neovide_transparency = 0.3
-  vim.g.transparency = 0.8
+  vim.g.neovide_transparency_point = 0.9
+  -- Add keybinds to change transparency
+  local change_transparency = function(delta)
+    vim.g.neovide_transparency_point = vim.g.neovide_transparency_point + delta
+    vim.g.neovide_background_color = vim.g.neovide_background_color_base .. alpha()
+  end
+  vim.keymap.set({ "n", "v", "o" }, "<D-]>", function()
+    if vim.g.neovide_transparency_point <= 0.9 then
+      change_transparency(0.1)
+    end
+  end)
+  vim.keymap.set({ "n", "v", "o" }, "<D-[>", function()
+    if vim.g.neovide_transparency_point >= 0.1 then
+      change_transparency(0.1)
+    end
+  end)
+  -- vim.g.neovide_transparency = 0.3
+  -- vim.g.transparency = 0.8
 
   vim.g.neovide_window_blurred = true
 

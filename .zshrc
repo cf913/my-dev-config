@@ -70,6 +70,7 @@ alias dev="tmux new -A -s session \; send-keys -t session.0 'npm run tmux:start'
 alias sz="source ~/.zshrc"
 alias v="nvim"
 alias lg="lazygit"
+alias hg="history | grep"
 
 alias docs-sveltekit="cd ~/Projects/docs/kit/sites/kit.svelte.dev/ && npm run preview"
 alias docs-tailwind="cd ~/Projects/docs/tailwindcss.com && npm run start"
