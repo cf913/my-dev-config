@@ -15,7 +15,8 @@ get_timezone() {
 main() {
     timezone=$(get_timezone)
     tmux set-option -g clock-mode-style 24
-    date +"%a %d %b #[fg="#5ff1ff"]%R" # <---- using this one
+    # date +"%a %d %b #[fg="#5ff1ff"]%R"
+    date +"%a %d %b %R" # <---- using this one
 }
 
 main

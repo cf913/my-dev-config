@@ -47,8 +47,8 @@ battery_status() {
     case $status in
     discharging | Discharging) echo '' ;;
     high) echo '' ;;
-    charging) echo '#[fg="yellow"]' ;;
-    *) echo '#[fg="yellow"]' ;;
+    charging) echo '' ;;
+    *) echo '' ;;
     esac
 }
 
@@ -76,7 +76,7 @@ main() {
     elif [ -z "$bat_perc" ]; then
         echo "$bat_stat $bat_label"
     else
-        echo "$bat_stat $bat_label$bat_perc%"
+        echo "#[fg="green"]$bat_stat $bat_label$bat_perc%"
     fi
 }
 
