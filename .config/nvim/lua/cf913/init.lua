@@ -56,7 +56,7 @@ if vim.g.neovide then
   -- g:neovide_transparency should be 0 if you want to unify transparency of content and title bar.
   -- -- Helper function for transparency formatting
   local alpha = function()
-    return string.format("%x", math.floor(255 * vim.g.neovide_transparency_point or 0.8))
+    return string.format("%x", math.floor(255 * (vim.g.neovide_transparency_point or 0.8)))
   end
   -- Set transparency and background color (title bar color)
   vim.g.neovide_transparency = 0.3
