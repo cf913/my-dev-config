@@ -12,12 +12,14 @@ vim.o.termguicolors = true  -- Enable 24-bit RGB colors
 vim.o.conceallevel = 2
 vim.o.cmdheight = 0
 
+local separator = vim.g.neovide and " │  " or " ┃  "
+-- local separator = " │  "
 vim.opt.statuscolumn =
-    '%s%=%#LineNr4#%{(v:relnum >= 4)?v:relnum.\" ┃  \":\"\"}' ..
-    '%#LineNr3#%{(v:relnum == 3)?v:relnum.\" ┃  \":\"\"}' ..
-    '%#LineNr2#%{(v:relnum == 2)?v:relnum.\" ┃  \":\"\"}' ..
-    '%#LineNr1#%{(v:relnum == 1)?v:relnum.\" ┃  \":\"\"}' ..
-    '%#LineNr0#%{(v:relnum == 0)?v:lnum.\" ┃  \":\"\"}'
+    '%s%=%#LineNr4#%{(v:relnum >= 4)?v:relnum.\"' .. separator .. '\":\"\"}' ..
+    '%#LineNr3#%{(v:relnum == 3)?v:relnum.\"' .. separator .. '\":\"\"}' ..
+    '%#LineNr2#%{(v:relnum == 2)?v:relnum.\"' .. separator .. '\":\"\"}' ..
+    '%#LineNr1#%{(v:relnum == 1)?v:relnum.\"' .. separator .. '\":\"\"}' ..
+    '%#LineNr0#%{(v:relnum == 0)?v:lnum.\"' .. separator .. '\":\"\"}'
 
 vim.o.splitbelow = true
 vim.o.splitright = true
