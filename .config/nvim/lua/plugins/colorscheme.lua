@@ -7,57 +7,36 @@ return {
     lazy = false,
     priority = 1000,
     config = function()
+      require("tokyonight").setup({
+        transparent = true,
+        style = 'night',
+        styles = {
+          sidebars = "transparent",
+          floats = "transparent",
+          statusline = "transparent",
+        },
+        on_colors = function(colors)
+          colors.bg_statusline = colors
+              .none -- To check if its working try something like "#ff00ff" instead of colors.none
+        end,
+        on_highlights = function(highlights)
+          highlights.TreesitterContext = { bg = "NONE" }
+          highlights.TreesitterContextLineNumber = { bg = "NONE" }
+          highlights.LineNr4 = { fg = "#3B4261" }
+          highlights.LineNr3 = { fg = "#4d71a0" }
+          highlights.LineNr2 = { fg = "#6fc1cf" }
+          highlights.LineNr1 = { fg = "#aff1ff" }
+          highlights.LineNr0 = { fg = "#FF9D65", bold = true }
+        end,
+      })
       if vim.g.neovide then
-        require("tokyonight").setup({
-          transparent = true,
-          style = 'night',
-          styles = {
-            sidebars = "transparent",
-            floats = "transparent",
-            statusline = "transparent",
-          },
-          on_colors = function(colors)
-            colors.bg_statusline = colors
-                .none -- To check if its working try something like "#ff00ff" instead of colors.none
-          end,
-          on_highlights = function(highlights)
-            highlights.TreesitterContext = { bg = "NONE" }
-            highlights.TreesitterContextLineNumber = { bg = "NONE" }
-            highlights.LineNr4 = { fg = "#3B4261" }
-            highlights.LineNr3 = { fg = "#4d71a0" }
-            highlights.LineNr2 = { fg = "#6fc1cf" }
-            highlights.LineNr1 = { fg = "#aff1ff" }
-            highlights.LineNr0 = { fg = "#FF9D65", bold = true }
-          end,
-        })
         -- Set transparency and background color (title bar color)
         vim.g.neovide_background_color_base = "#2a2839"
+        vim.g.neovide_background_color = vim.g.neovide_background_color_base .. alpha()
         vim.cmd.colorscheme('tokyonight')
       else
-        require("tokyonight").setup({
-          transparent = true,
-          style = 'night',
-          styles = {
-            sidebars = "transparent",
-            floats = "transparent",
-            statusline = "transparent",
-          },
-          on_colors = function(colors)
-            colors.bg_statusline = colors
-                .none -- To check if its working try something like "#ff00ff" instead of colors.none
-          end,
-          on_highlights = function(highlights)
-            highlights.TreesitterContext = { bg = "NONE" }
-            highlights.TreesitterContextLineNumber = { bg = "NONE" }
-            highlights.LineNr4 = { fg = "#3B4261" }
-            highlights.LineNr3 = { fg = "#4d71a0" }
-            highlights.LineNr2 = { fg = "#6fc1cf" }
-            highlights.LineNr1 = { fg = "#aff1ff" }
-            highlights.LineNr0 = { fg = "#FF9D65", bold = true }
-          end,
-        })
+        -- vim.cmd.colorscheme('tokyonight') -- setting
       end
-      -- vim.cmd.colorscheme('tokyonight') -- setting
     end
   },
   {
@@ -126,11 +105,11 @@ return {
       if vim.g.neovide then
         -- Set transparency and background color (title bar color)
         -- vim.g.neovide_background_color_base = "#262231"
+        vim.g.neovide_background_color = vim.g.neovide_background_color_base .. alpha()
         -- vim.cmd("colorscheme rose-pine") -- setting
       else
         vim.cmd("colorscheme rose-pine") -- setting
       end
-      vim.g.neovide_background_color = vim.g.neovide_background_color_base .. alpha()
     end
   }
 }
