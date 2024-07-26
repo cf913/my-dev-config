@@ -11,7 +11,7 @@ return {
     },
     scope = {
       -- highlight = { "NeotestExpandMarker" }
-      highlight = { "IblIndent" }
+      highlight = { "LineNr4" }
     }
   }
 }

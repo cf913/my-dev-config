@@ -59,7 +59,7 @@ battery_label() {
         echo " "
     elif [ "$bat_perc" -gt 25 ]; then
         echo " "
-    elif [ "$bat_perc" -gt 10 ]; then
+    elif [ "$bat_perc" -gt 15 ]; then
         echo "#[fg="orange"] "
     else
         echo "#[fg="red"] "

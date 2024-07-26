@@ -12,7 +12,8 @@ vim.o.termguicolors = true  -- Enable 24-bit RGB colors
 vim.o.conceallevel = 2
 vim.o.cmdheight = 0
 
-local separator = vim.g.neovide and " │  " or " ┃  "
+local separator = vim.g.neovide and " │  " or " ┃ "
+-- local separator = vim.g.neovide and " │  " or " "
 -- local separator = " │  "
 vim.opt.statuscolumn =
     '%s%=%#LineNr4#%{(v:relnum >= 4)?v:relnum.\"' .. separator .. '\":\"\"}' ..

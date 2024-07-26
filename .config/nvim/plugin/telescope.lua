@@ -6,6 +6,7 @@ vim.keymap.set('n', '<leader>fh', '<cmd>Telescope find_files find_command=rg,--i
 vim.keymap.set('n', '<leader>fg', builtin.git_files, { desc = "Find Git Files" })
 vim.keymap.set('n', '<leader>fc', builtin.colorscheme, { desc = "Find Colorscheme" })
 vim.keymap.set('n', '<leader>fr', builtin.oldfiles, { desc = "Find Recent Files" })
+vim.keymap.set('n', '<leader>fR', builtin.lsp_references, { desc = "Find LSP References" })
 vim.keymap.set('n', '<leader>fk', builtin.keymaps, { desc = "Find Keymaps" })
 vim.keymap.set('n', '<leader>fb', function() builtin.buffers({ sort_mru = true, ignore_current_buffer = true }) end,
   { desc = "Find Buffers", })
@@ -17,7 +18,7 @@ vim.keymap.set('n', '<leader>fb', function() builtin.buffers({ sort_mru = true, 
 vim.keymap.set('n', '<leader>fj', builtin.jumplist, { desc = "Find Jumplist" })
 vim.keymap.set('n', '<leader>fa', builtin.live_grep, { desc = "Search All Files" })
 
-vim.keymap.set('n', '<LEADER>jv', '<cmd>lua require"telescope.builtin".lsp_definitions()<CR>',
-  { noremap = true, silent = true, desc = 'Definition Split' })
-vim.keymap.set('n', '<LEADER>jd', '<cmd>lua require"telescope.builtin".lsp_definitions({jump_type="vsplit"})<CR>',
+vim.keymap.set('n', '<LEADER>jd', '<cmd>lua require"telescope.builtin".lsp_definitions()<CR>',
   { noremap = true, silent = true, desc = 'Definition' })
+vim.keymap.set('n', '<LEADER>jv', '<cmd>lua require"telescope.builtin".lsp_definitions({jump_type="vsplit"})<CR>',
+  { noremap = true, silent = true, desc = 'Definition Split' })

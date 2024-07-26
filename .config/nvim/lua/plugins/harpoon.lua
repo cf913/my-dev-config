@@ -1,7 +1,7 @@
 return {
   "ThePrimeagen/harpoon",
   branch = "harpoon2",
-  event = "BufReadPre",
+  lazy = true,
   dependencies = { "nvim-lua/plenary.nvim", "nvim-telescope/telescope.nvim" },
   opts = {}
 }

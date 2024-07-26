@@ -8,22 +8,22 @@ return {
     -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
   },
   keys = {
-    -- {
-    --   "<leader>fe",
-    --   function()
-    --     require("neo-tree.command").execute({ toggle = true, dir = LazyVim.root() })
-    --   end,
-    --   desc = "Explorer NeoTree (Root Dir)",
-    -- },
     {
       "<leader>fe",
       function()
-        require("neo-tree.command").execute({ reveal = true, dir = vim.uv.cwd(), position = 'float' })
+        require("neo-tree.command").execute({ toggle = true, reveal = true, dir = vim.uv.cwd(), position = 'right' })
+      end,
+      desc = "Explorer NeoTree (Root Dir)",
+    },
+    {
+      "<leader>e",
+      function()
+        require("neo-tree.command").execute({ reveal = true, dir = vim.uv.cwd(), position = 'right' })
       end,
       desc = "Explorer NeoTree (cwd)",
     },
     -- { "<leader>e", "<leader>fe", desc = "Explorer NeoTree (Root Dir)", remap = true },
-    { "<leader>e", "<leader>fe", desc = "Explorer NeoTree (cwd)", remap = true },
+    -- { "<leader>fe", desc = "Explorer NeoTree (cwd)", remap = true },
     {
       "<leader>ge",
       function()

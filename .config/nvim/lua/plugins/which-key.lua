@@ -9,6 +9,7 @@ return {
     preset = "modern",
     expand = 1,
     triggers = {
+      { "g",        mode = { "n", "v" } },
       { "<leader>", mode = { "n", "v" } },
     }
   },

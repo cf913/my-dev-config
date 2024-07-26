@@ -19,6 +19,12 @@ return {
           key = 'd',
         },
         {
+          desc = ' Daily Note',
+          group = 'DiagnosticHint',
+          action = 'ObsidianToday',
+          key = 'o',
+        },
+        {
           icon = ' ',
           icon_hl = '@variable',
           desc = 'Files',
