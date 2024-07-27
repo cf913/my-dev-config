@@ -35,7 +35,7 @@ return {
         vim.g.neovide_background_color = vim.g.neovide_background_color_base .. alpha()
         vim.cmd.colorscheme('tokyonight')
       else
-        vim.cmd.colorscheme('tokyonight') -- setting
+        -- vim.cmd.colorscheme('tokyonight') -- setting
       end
     end
   },
@@ -91,9 +91,11 @@ return {
           h4 = "gold",
           h5 = "pine",
           h6 = "foam",
+
         },
 
         highlight_groups = {
+          Number = { fg = "#5BC1A2" },
           LineNr4 = { fg = "#3B4261" },
           LineNr3 = { fg = "#445464" },
           LineNr2 = { fg = "#5D8E97" },
@@ -108,7 +110,7 @@ return {
         vim.g.neovide_background_color = vim.g.neovide_background_color_base .. alpha()
         -- vim.cmd("colorscheme rose-pine")
       else
-        -- vim.cmd("colorscheme rose-pine") -- setting
+        vim.cmd("colorscheme rose-pine") -- setting
       end
     end
   }
