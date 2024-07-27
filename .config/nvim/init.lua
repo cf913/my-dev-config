@@ -27,7 +27,6 @@ require("lazy").setup({
     {
       "m4xshen/hardtime.nvim",
       dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
-      event = "InsertEnter",
       opts = {
         max_count = 6
       }
