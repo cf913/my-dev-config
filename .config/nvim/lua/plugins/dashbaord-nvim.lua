@@ -3,9 +3,6 @@ return {
   event = 'VimEnter',
   opts = {
     theme = 'hyper',
-    hide = {
-      statusline = false, -- hide statusline default is true
-    },
     config = {
       week_header = {
         enable = true,
@@ -18,12 +15,12 @@ return {
           action = 'Telescope find_files cwd=~/',
           key = 'd',
         },
-        {
-          desc = ' Daily Note',
-          group = 'DiagnosticHint',
-          action = 'ObsidianToday',
-          key = 'o',
-        },
+        -- {
+        --   desc = ' Daily Note',
+        --   group = 'DiagnosticHint',
+        --   action = 'ObsidianToday',
+        --   key = 'o',
+        -- },
         {
           icon = ' ',
           icon_hl = '@variable',

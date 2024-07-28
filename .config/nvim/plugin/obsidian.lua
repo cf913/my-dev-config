@@ -1,5 +1,0 @@
--- vim.keymap.set("n", "<leader>Od", '<cmd>ObsidianToday<CR>', { desc = "Obsidian: Open today's daily note" })
--- vim.keymap.set("n", "<leader>Oo", '<cmd>ObsidianOpen<CR>', { desc = "Obsidian: Open in Obsidian" })
--- vim.keymap.set("n", "<leader>On", '<cmd>ObsidianNew<CR>', { desc = "Obsidian: Open New Note" })
--- vim.keymap.set("n", "<leader>Ofp", '<cmd>ObsidianQuickSwitch<CR>', { desc = "Obsidian: Search Files" })
--- vim.keymap.set("n", "<leader>Ofa", '<cmd>ObsidianSearch<CR>', { desc = "Obsidian: Search In Files" })

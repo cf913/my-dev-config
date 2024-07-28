@@ -1,7 +1,10 @@
 return {
   'tris203/precognition.nvim',
   keys = {
-    { "<leader>Tp", function() require('precognition').toggle() end, { desc = 'Pregognition: Toggle' } }
+    { "<leader>TP", desc = 'Start Precognition' },
+    { "<leader>Tp", function() require('precognition').toggle() end, desc = 'Toggle Precognition' }
   },
-  opts = {}
+  opts = {
+    startVisible = true,
+  }
 }

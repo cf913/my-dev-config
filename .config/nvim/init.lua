@@ -9,6 +9,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
   vim.fn.system({
     "git",
     "clone",
+
     "--filter=blob:none",
     "https://github.com/folke/lazy.nvim.git",
     "--branch=stable", -- latest stable release
@@ -27,6 +28,10 @@ require("lazy").setup({
     {
       "m4xshen/hardtime.nvim",
       dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
+      event = "InsertEnter",
+      keys = {
+        { '<leader>Th', ':Hardtime toggle<cr>', desc = 'Toggle Hardtime' }
+      },
       opts = {
         max_count = 6
       }

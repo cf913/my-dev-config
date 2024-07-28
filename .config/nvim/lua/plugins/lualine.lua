@@ -1,6 +1,6 @@
 return {
   "nvim-lualine/lualine.nvim",
-  lazy = false,
+  event = "BufReadPre",
   dependencies = "nvim-tree/nvim-web-devicons",
   opts = function()
     local utils = require("core.utils")

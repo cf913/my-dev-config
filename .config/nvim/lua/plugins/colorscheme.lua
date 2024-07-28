@@ -4,8 +4,8 @@ end
 return {
   {
     'folke/tokyonight.nvim',
-    lazy = false,
-    priority = 1000,
+    lazy = true,
+    -- priority = 1000,
     config = function()
       require("tokyonight").setup({
         transparent = true,
@@ -96,6 +96,7 @@ return {
 
         highlight_groups = {
           Number = { fg = "#5BC1A2" },
+          -- LineNr = { fg = "#3B4261" },
           LineNr4 = { fg = "#3B4261" },
           LineNr3 = { fg = "#445464" },
           LineNr2 = { fg = "#5D8E97" },

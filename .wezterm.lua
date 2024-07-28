@@ -13,8 +13,8 @@ config.colors = {
   foreground = "#CBE0F0",
   -- background = "#011423",
   -- background = "#000000",
-  background = "#1A1B27", -- tokyonight
-  -- background = "#191724", -- rose-pine
+  -- background = "#1A1B27", -- tokyonight
+  background = "#191724", -- rose-pine
   cursor_bg = "#47FF9C",
   cursor_border = "#47FF9C",
   cursor_fg = "#011423",
@@ -40,10 +40,10 @@ config.colors = {
 
 -- config.font = wezterm.font("MesloLGS Nerd Font Mono", { weight = 'Medium' })
 -- config.freetype_load_flags = 'NO_HINTING'
-config.font = wezterm.font('JetBrainsMono Nerd Font Propo')
+config.font = wezterm.font('JetBrainsMono Nerd Font')
 config.font_size = 13
 config.line_height = 1.2
-config.cell_width = 0.94
+config.cell_width = 1
 -- config.freetype_render_target = 'Normal'
 -- config.harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' }
 
@@ -62,8 +62,8 @@ config.window_padding = {
 
 
 config.window_decorations = "RESIZE"
-config.window_background_opacity = 0.92
-config.macos_window_background_blur = 50
+config.window_background_opacity = 1
+config.macos_window_background_blur = 100
 
 config.keys = {
   {

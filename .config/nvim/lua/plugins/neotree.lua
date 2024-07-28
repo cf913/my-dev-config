@@ -34,7 +34,7 @@ return {
     {
       "<leader>be",
       function()
-        require("neo-tree.command").execute({ source = "buffers", reveal = true, position = 'float' })
+        require("neo-tree.command").execute({ source = "buffers", reveal = true, position = 'right' })
       end,
       desc = "Buffer Explorer",
     },

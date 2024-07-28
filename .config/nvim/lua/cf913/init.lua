@@ -11,21 +11,42 @@ vim.o.cursorline = true     -- Highlight the current line
 vim.o.termguicolors = true  -- Enable 24-bit RGB colors
 vim.o.conceallevel = 2
 vim.o.cmdheight = 0
-
-local separator = vim.g.neovide and " │  " or " ┃ "
--- local separator = vim.g.neovide and " │  " or " "
--- local separator = " │  "
-vim.opt.statuscolumn =
-    '%s%=%#LineNr4#%{(v:relnum >= 4)?v:relnum.\"' .. separator .. '\":\"\"}' ..
-    '%#LineNr3#%{(v:relnum == 3)?v:relnum.\"' .. separator .. '\":\"\"}' ..
-    '%#LineNr2#%{(v:relnum == 2)?v:relnum.\"' .. separator .. '\":\"\"}' ..
-    '%#LineNr1#%{(v:relnum == 1)?v:relnum.\"' .. separator .. '\":\"\"}' ..
-    '%#LineNr0#%{(v:relnum == 0)?v:lnum.\"' .. separator .. '\":\"\"}'
-
 vim.o.splitbelow = true
 vim.o.splitright = true
 
-vim.opt.scrolloff = 6
+vim.o.scrolloff = 6
+
+-- Show relative numbers in the active window, and absolute in others
+vim.api.nvim_create_autocmd({ "WinLeave" }, {
+  pattern = { "*" },
+  callback = function()
+    -- vim.wo.statuscolumn = ''
+    vim.wo.cursorline = false
+    vim.wo.cursorcolumn = false
+    vim.o.signcolumn = "no"
+    vim.opt.colorcolumn = ""
+  end,
+})
+
+vim.api.nvim_create_autocmd({ "BufEnter", "WinEnter" }, {
+  pattern = { "*" },
+  callback = function()
+    -- local separator = vim.g.neovide and " │  " or " ┃ "
+    local separator = vim.g.neovide and " │  " or " "
+    -- local separator = " │  "
+    -- vim.wo.statuscolumn =
+    --     '%s%=%#LineNr4#%{(v:relnum >= 4)?v:relnum.\"' .. separator .. '\":\"\"}' ..
+    --     '%#LineNr3#%{(v:relnum == 3)?v:relnum.\"' .. separator .. '\":\"\"}' ..
+    --     '%#LineNr2#%{(v:relnum == 2)?v:relnum.\"' .. separator .. '\":\"\"}' ..
+    --     '%#LineNr1#%{(v:relnum == 1)?v:relnum.\"' .. separator .. '\":\"\"}' ..
+    --     '%#LineNr0#%{(v:relnum == 0)?v:lnum.\"' .. separator .. '\":\"\"}'
+    vim.wo.cursorline = true
+    vim.wo.cursorcolumn = true
+    vim.o.signcolumn = "yes"
+  end,
+})
+
+
 
 -- NEOVIDE ONLY CONFIG
 if vim.g.neovide then
@@ -96,8 +117,8 @@ if vim.g.neovide then
   vim.api.nvim_set_keymap('v', '<D-v>', '<C-R>+', { noremap = true, silent = true })
 end
 
-vim.keymap.set({ 'n', 'i', 'v' }, '<A-up>', 'ddkP', { desc = 'Move line UP' })
-vim.keymap.set({ 'n', 'i', 'v' }, '<A-down>', 'ddp', { desc = 'Move line DOWN' })
+vim.keymap.set({ 'n', 'i', 'v' }, '<M-up>', 'ddkP', { desc = 'Move line UP' })
+vim.keymap.set({ 'n', 'i', 'v' }, '<M-down>', 'ddp', { desc = 'Move line DOWN' })
 
 -- Syntax highlighting and filetype plugins
 vim.cmd('syntax enable')

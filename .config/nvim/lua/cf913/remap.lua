@@ -23,10 +23,8 @@ vim.keymap.set({ "n", "v" }, "<leader>V", "\"*p", { desc = "Clipboard: PASTE" })
 vim.keymap.set("n", "-", ":split<CR>", { desc = "Window: Split --" })
 vim.keymap.set("n", "|", ":vsplit<CR>", { desc = "Window: Split |" })
 
-vim.keymap.set("n", "<leader>S", ":set ic!<CR>", { desc = "Toggle Search SmartCase" })
-
 -- SET
-vim.keymap.set("n", "<leader>S", ":set ic!<CR>", { desc = "Toggle Search SmartCase" })
+-- vim.keymap.set("n", "<leader>S", ":set ic!<CR>", { desc = "Toggle Search SmartCase" })
 vim.keymap.set("n", "<leader>sc2", ":set conceallevel=2<CR>", { desc = "Set conceallevel 2" })
 vim.keymap.set("n", "<leader>sc0", ":set conceallevel=0<CR>", { desc = "Set conceallevel 2" })
 
@@ -86,8 +84,8 @@ local organize_imports = function()
   vim.lsp.buf.execute_command({ command = "_typescript.organizeImports", arguments = { vim.fn.expand("%:p") } })
 end
 
-vim.keymap.set("n", "<leader>i", auto_import, { desc = "Import: Add Missing" })
-vim.keymap.set("n", "<leader>o", organize_imports, { desc = "Import: Organize" })
+vim.keymap.set("n", "<leader>ii", auto_import, { desc = "Import: Add Missing" })
+vim.keymap.set("n", "<leader>io", organize_imports, { desc = "Import: Organize" })
 
 vim.keymap.set("n", "[c", function()
   require("treesitter-context").go_to_context(vim.v.count1)
