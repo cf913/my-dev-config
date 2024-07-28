@@ -1,7 +1,6 @@
 return {
   "ThePrimeagen/harpoon",
   branch = "harpoon2",
-  event = "VeryLazy",
   keys = {
     { '<leader>a' },
     { '<leader>h' },
@@ -12,5 +11,9 @@ return {
     { '<leader>k' },
   },
   dependencies = { "nvim-lua/plenary.nvim", "nvim-telescope/telescope.nvim" },
-  opts = {}
+  opts = {
+    settings = {
+      save_on_toggle = true,
+    },
+  }
 }
