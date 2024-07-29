@@ -1,11 +1,11 @@
 local alpha = function()
-  return string.format("%x", math.floor(255 * vim.g.neovide_transparency_point or 0.8))
+  return string.format("%x", math.floor(255 * vim.g.neovide_transparency_point))
 end
 return {
   {
     'folke/tokyonight.nvim',
-    lazy = true,
-    -- priority = 1000,
+    lazy = false,
+    priority = 1000,
     config = function()
       require("tokyonight").setup({
         transparent = true,
@@ -107,7 +107,7 @@ return {
 
       if vim.g.neovide then
         -- Set transparency and background color (title bar color)
-        -- vim.g.neovide_background_color_base = "#262231"
+        vim.g.neovide_background_color_base = "#262231"
         vim.g.neovide_background_color = vim.g.neovide_background_color_base .. alpha()
         -- vim.cmd("colorscheme rose-pine")
       else

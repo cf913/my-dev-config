@@ -10,7 +10,7 @@ return {
         component_separators = { left = " ", right = " " },
         section_separators = { left = " ", right = " " },
         theme = "cyberdream",
-        globalstatus = true,
+        globalstatus = false,
         disabled_filetypes = { statusline = { "dashboard", "alpha" } },
       },
       sections = {

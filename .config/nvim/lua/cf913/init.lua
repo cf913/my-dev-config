@@ -23,7 +23,7 @@ vim.api.nvim_create_autocmd({ "WinLeave" }, {
     -- vim.wo.statuscolumn = ''
     vim.wo.cursorline = false
     vim.wo.cursorcolumn = false
-    vim.o.signcolumn = "no"
+    -- vim.o.signcolumn = "no"
     vim.opt.colorcolumn = ""
   end,
 })
@@ -42,7 +42,7 @@ vim.api.nvim_create_autocmd({ "BufEnter", "WinEnter" }, {
     --     '%#LineNr0#%{(v:relnum == 0)?v:lnum.\"' .. separator .. '\":\"\"}'
     vim.wo.cursorline = true
     vim.wo.cursorcolumn = true
-    vim.o.signcolumn = "yes"
+    -- vim.o.signcolumn = "yes"
   end,
 })
 

@@ -41,7 +41,7 @@ config.colors = {
 -- config.font = wezterm.font("MesloLGS Nerd Font Mono", { weight = 'Medium' })
 -- config.freetype_load_flags = 'NO_HINTING'
 config.font = wezterm.font('JetBrainsMono Nerd Font')
-config.font_size = 13
+config.font_size = 14
 config.line_height = 1.2
 config.cell_width = 1
 -- config.freetype_render_target = 'Normal'
@@ -62,8 +62,8 @@ config.window_padding = {
 
 
 config.window_decorations = "RESIZE"
-config.window_background_opacity = 1
-config.macos_window_background_blur = 100
+config.window_background_opacity = 0.95
+config.macos_window_background_blur = 50
 
 config.keys = {
   {
