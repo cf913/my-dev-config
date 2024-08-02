@@ -30,37 +30,77 @@ require("lazy").setup({
       dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
       event = "InsertEnter",
       keys = {
-        { '<leader>Th', ':Hardtime toggle<cr>', desc = 'Toggle Hardtime' }
+        { "<leader>Th", ":Hardtime toggle<cr>", desc = "Toggle Hardtime" },
       },
       opts = {
-        max_count = 6
-      }
+        max_count = 10,
+      },
     },
     { "Bilal2453/luvit-meta",             lazy = true }, -- optional `vim.uv` typings
-    { 'VonHeikemen/lsp-zero.nvim',        branch = 'v3.x' },
-    { 'williamboman/mason.nvim' },
-    { 'williamboman/mason-lspconfig.nvim' },
-    { 'neovim/nvim-lspconfig' },
+    { "VonHeikemen/lsp-zero.nvim",        branch = "v3.x" },
+    { "williamboman/mason.nvim" },
+    { "williamboman/mason-lspconfig.nvim" },
+    { "neovim/nvim-lspconfig" },
     {
-      'hrsh7th/nvim-cmp',
-      opts = function(_, opts)
-        opts.sources = opts.sources or {}
-        table.insert(opts.sources, {
-          name = "lazydev",
-          group_index = 0, -- set group index to 0 to skip loading LuaLS completions
-        })
-      end
-    },
-    { 'hrsh7th/cmp-nvim-lsp' },
-    { 'L3MON4D3/LuaSnip' },
-    {
-      'lewis6991/gitsigns.nvim',
+      "hrsh7th/nvim-cmp",
       event = "InsertEnter",
-      opts = {}
+      opts = function()
+        local cmp = require("cmp")
+        cmp.setup({
+          snippet = {
+            expand = function(args)
+              require("luasnip").lsp_expand(args.body) -- For `luasnip` users.
+            end,
+          },
+          completion = { completeopt = "menu,menuone,noinsert" },
+          window = {
+            -- completion = cmp.config.window.bordered(),
+            -- documentation = cmp.config.window.bordered(),
+          },
+          mapping = cmp.mapping.preset.insert({
+            ["<C-b>"] = cmp.mapping.scroll_docs(-4),
+            ["<C-f>"] = cmp.mapping.scroll_docs(4),
+            -- Ctrl + space triggers completion menu
+            ["<C-Space>"] = cmp.mapping.complete(),
+            -- ["<C-e>"] = cmp.mapping.abort(),
+            ["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+            ["<C-n>"] = cmp.mapping(function()
+              if cmp.visible() then
+                cmp.select_next_item({ behavior = "insert" })
+              else
+                cmp.complete()
+              end
+            end),
+          }),
+          sources = cmp.config.sources({
+            {
+              name = "lazydev",
+              -- set group index to 0 to skip loading LuaLS completions as lazydev recommends it
+              group_index = 0,
+            },
+            { name = "nvim_lsp" },
+            { name = "nvim_lua" },
+            { name = "luasnip" }, -- For luasnip users.
+            -- { name = "orgmode" },
+          }, {
+            { name = "buffer" },
+            { name = "path" },
+          }),
+        })
+      end,
     },
-  }
+    {
+      "hrsh7th/cmp-nvim-lsp",
+    },
+    { "L3MON4D3/LuaSnip" },
+    {
+      "lewis6991/gitsigns.nvim",
+      event = "InsertEnter",
+      opts = {},
+    },
+  },
 })
 
 vim.g.markdown_fenced_languages = {
-  "ts=typescript"
+  "ts=typescript",
 }

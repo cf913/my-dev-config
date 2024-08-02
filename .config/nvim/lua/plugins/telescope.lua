@@ -5,11 +5,11 @@ return {
   dependencies = { 'nvim-lua/plenary.nvim' },
   opts = {
     defaults = {
-      -- layout_strategy = 'dropdown',
+      layout_strategy = 'horizontal',
       layout_config = {
         height = 0.9,
         width = 0.9,
-        preview_width = 0.5,
+        -- preview_width = 0.5,
         prompt_position = 'top',
       },
       sorting_strategy = "ascending"

@@ -40,14 +40,11 @@ config.colors = {
 
 -- config.font = wezterm.font("MesloLGS Nerd Font Mono", { weight = 'Medium' })
 -- config.freetype_load_flags = 'NO_HINTING'
-config.font = wezterm.font('JetBrainsMono Nerd Font')
+config.font = wezterm.font('JetBrainsMono Nerd Font', { weight = 'Regular' })
 config.font_size = 14
 config.line_height = 1.2
 config.cell_width = 1
--- config.freetype_render_target = 'Normal'
--- config.harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' }
 
--- config.enable_tab_bar = false
 config.use_fancy_tab_bar = false
 config.tab_bar_at_bottom = true
 config.hide_tab_bar_if_only_one_tab = true
@@ -63,7 +60,7 @@ config.window_padding = {
 
 config.window_decorations = "RESIZE"
 config.window_background_opacity = 0.95
-config.macos_window_background_blur = 50
+config.macos_window_background_blur = 20
 
 config.keys = {
   {

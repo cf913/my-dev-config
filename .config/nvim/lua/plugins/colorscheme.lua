@@ -31,9 +31,9 @@ return {
       })
       if vim.g.neovide then
         -- Set transparency and background color (title bar color)
-        vim.g.neovide_background_color_base = "#2a2839"
-        vim.g.neovide_background_color = vim.g.neovide_background_color_base .. alpha()
-        vim.cmd.colorscheme('tokyonight')
+        -- vim.g.neovide_background_color_base = "#2a2839"
+        -- vim.g.neovide_background_color = vim.g.neovide_background_color_base .. alpha()
+        -- vim.cmd.colorscheme('tokyonight')
       else
         -- vim.cmd.colorscheme('tokyonight') -- setting
       end
@@ -109,7 +109,7 @@ return {
         -- Set transparency and background color (title bar color)
         vim.g.neovide_background_color_base = "#262231"
         vim.g.neovide_background_color = vim.g.neovide_background_color_base .. alpha()
-        -- vim.cmd("colorscheme rose-pine")
+        vim.cmd("colorscheme rose-pine")
       else
         vim.cmd("colorscheme rose-pine") -- setting
       end
