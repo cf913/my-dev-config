@@ -1,3 +1,5 @@
+Screenshots may be slightly outdated.
+
 ## wezterm (rose-pine)
 My goto setup. For night coding, and or if I need tmux. Main inspiration: Zed editor.
 <img width="1512" alt="wezterm" src="https://github.com/user-attachments/assets/88fdbc05-c5b5-4485-89d3-a600e542c0e9">
