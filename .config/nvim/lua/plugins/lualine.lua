@@ -1,6 +1,6 @@
 return {
   "nvim-lualine/lualine.nvim",
-  event = "BufReadPre",
+  lazy = false,
   dependencies = "nvim-tree/nvim-web-devicons",
   opts = function()
     local utils = require("core.utils")
@@ -10,7 +10,7 @@ return {
         component_separators = { left = " ", right = " " },
         section_separators = { left = " ", right = " " },
         theme = "cyberdream",
-        globalstatus = false,
+        globalstatus = true,
         disabled_filetypes = { statusline = { "dashboard", "alpha" } },
       },
       sections = {
