@@ -14,4 +14,4 @@ wsl = false
 [font]
 size = 14
 hinting = "full"
-normal = ["JetBrainsMono Nerd Font Propo"]
+normal = ["JetBrainsMono Nerd Font"]
