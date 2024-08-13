@@ -3,6 +3,9 @@ local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>fp',
   function() builtin.find_files(require('telescope.themes').get_dropdown { previewer = false }) end,
   { desc = "Find Files" })
+vim.keymap.set('n', '<leader>p',
+  function() builtin.find_files(require('telescope.themes').get_dropdown { previewer = false }) end,
+  { desc = "Find Files" })
 vim.keymap.set('n', '<leader>fh', '<cmd>Telescope find_files find_command=rg,--ignore,--hidden,--files,-u<CR>',
   { desc = "Find Hidden Files" })
 vim.keymap.set('n', '<leader>fg', builtin.git_files, { desc = "Find Git Files" })

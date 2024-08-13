@@ -16,6 +16,7 @@ vim.o.splitright = true
 
 vim.o.scrolloff = 6
 
+
 -- local defaultStatusCol = vim.o.statuscolumn
 
 -- Show relative numbers in the active window, and absolute in others
