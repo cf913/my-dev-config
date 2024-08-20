@@ -15,6 +15,7 @@ config.colors = {
   -- background = "#000000",
   -- background = "#1A1B27", -- tokyonight
   background = "#191724", -- rose-pine
+  -- background = "#141414", -- gray
   cursor_bg = "#47FF9C",
   cursor_border = "#47FF9C",
   cursor_fg = "#011423",
@@ -32,7 +33,7 @@ config.colors = {
     inactive_tab = {
       -- The color of the background area for the tab
       bg_color = 'rgba(0,0,0,0)',
-      fg_color = '#333333',
+      fg_color = '#444444',
       italic = true
     }
   },
@@ -57,9 +58,19 @@ config.window_padding = {
   bottom = 0,
 }
 
+config.window_frame = {
+  --   border_left_width = '0.1cell',
+  --   border_right_width = '0.1cell',
+  --   border_bottom_height = '0.05cell',
+  border_top_height = '0.05cell',
+  --   border_left_color = '#212121',
+  --   border_right_color = '#212121',
+  --   border_bottom_color = '#181818',
+  border_top_color = '#282828',
+}
 
 config.window_decorations = "RESIZE"
-config.window_background_opacity = 0.90
+config.window_background_opacity = 0.93
 config.macos_window_background_blur = 50
 
 config.keys = {

@@ -10,6 +10,8 @@ return {
     expand = 1,
     triggers = {
       { "g",        mode = { "n", "v" } },
+      { "c",        mode = { "n", "v" } },
+      { "d",        mode = { "n", "v" } },
       { "<leader>", mode = { "n", "v" } },
       { "<C-w>",    mode = { "n", "v" } },
     }
