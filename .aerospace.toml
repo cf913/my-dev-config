@@ -57,7 +57,7 @@ inner.horizontal = 16
 inner.vertical =   16
 outer.left =       0
 outer.bottom =     0
-outer.top =        8
+outer.top =        4
 outer.right =      0
 
 [[on-window-detected]]

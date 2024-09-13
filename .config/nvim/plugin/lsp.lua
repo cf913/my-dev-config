@@ -24,14 +24,14 @@ vim.api.nvim_create_autocmd("LspAttach", {
   callback = function(args)
     local bufnr = args.buf
     local client = vim.lsp.get_client_by_id(args.data.client_id)
-    if client.name == "tsserver" then
+    if client.name == "ts_ls" then
       local is_denols_active = check_if_server_is_active("denols", bufnr)
       if is_denols_active then
         vim.lsp.buf_detach_client(bufnr, args.data.client_id)
       end
     elseif client.name == "denols" then
-      local is_tsserver_active, active_client = check_if_server_is_active("tsserver", bufnr)
-      if is_tsserver_active then
+      local is_ts_ls_active, active_client = check_if_server_is_active("ts_ls", bufnr)
+      if is_ts_ls_active then
         vim.lsp.buf_detach_client(bufnr, active_client.id)
       end
     end
@@ -42,13 +42,13 @@ require("mason").setup({})
 require("mason-lspconfig").setup({
   -- Replace the language servers listed here
   -- with the ones you want to install
-  ensure_installed = { "denols", "tsserver", "emmet_language_server", "lua_ls" },
+  ensure_installed = { "denols", "ts_ls", "emmet_language_server", "lua_ls" },
   handlers = {
     function(server_name)
       lspconfig[server_name].setup({})
     end,
-    ["tsserver"] = function()
-      lspconfig["tsserver"].setup({
+    ["ts_ls"] = function()
+      lspconfig["ts_ls"].setup({
         root_dir = lspconfig.util.root_pattern("package.json", "tsconfig.json", ".git"),
         on_attach = function(client, bufnr)
           local is_denols_active = check_if_server_is_active("denols", bufnr)
@@ -62,8 +62,8 @@ require("mason-lspconfig").setup({
       lspconfig["denols"].setup({
         root_dir = lspconfig.util.root_pattern("deno.json"),
         on_attach = function(_, bufnr)
-          local is_tsserver_active, active_client = check_if_server_is_active("tsserver", bufnr)
-          if is_tsserver_active then
+          local is_ts_ls_active, active_client = check_if_server_is_active("ts_ls", bufnr)
+          if is_ts_ls_active then
             vim.lsp.buf_detach_client(bufnr, active_client.id)
           end
         end,

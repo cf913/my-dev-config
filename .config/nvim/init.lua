@@ -93,11 +93,11 @@ require("lazy").setup({
       "hrsh7th/cmp-nvim-lsp",
     },
     { "L3MON4D3/LuaSnip" },
-    {
-      "lewis6991/gitsigns.nvim",
-      event = "InsertEnter",
-      opts = {},
-    },
+    -- {
+    --   "lewis6991/gitsigns.nvim",
+    --   event = "InsertEnter",
+    --   opts = {},
+    -- },
   },
 })
 
