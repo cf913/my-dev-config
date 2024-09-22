@@ -30,6 +30,11 @@ return {
         end,
       })
       if vim.g.neovide then
+        require("tokyonight").setup({
+          transparency = false,
+          styles = {
+          },
+        })
         -- Set transparency and background color (title bar color)
         -- vim.g.neovide_background_color_base = "#2a2839"
         -- vim.g.neovide_background_color = vim.g.neovide_background_color_base .. alpha()
@@ -48,7 +53,7 @@ return {
         variant = "auto",      -- auto, main, moon, or dawn
         dark_variant = "main", -- main, moon, or dawn
         dim_inactive_windows = false,
-        extend_background_behind_borders = false,
+        extend_background_behind_borders = true,
 
         enable = {
           terminal = false,
@@ -106,9 +111,16 @@ return {
       })
 
       if vim.g.neovide then
+        require("rose-pine").setup({
+          styles = {
+            bold = true,
+            italic = false,
+            transparency = false,
+          },
+        })
         -- Set transparency and background color (title bar color)
-        vim.g.neovide_background_color_base = "#262231"
-        vim.g.neovide_background_color = vim.g.neovide_background_color_base .. alpha()
+        -- vim.g.neovide_background_color_base = "#191724"
+        -- vim.g.neovide_background_color = vim.g.neovide_background_color_base .. alpha()
         vim.cmd("colorscheme rose-pine")
       else
         vim.cmd("colorscheme rose-pine") -- setting

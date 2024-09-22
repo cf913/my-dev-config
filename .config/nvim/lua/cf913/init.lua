@@ -1,5 +1,6 @@
 require("cf913.remap")
 
+
 vim.o.number = true         -- Enable line numbers
 vim.o.relativenumber = true -- Enable relative line numbers
 vim.o.tabstop = 2           -- Number of spaces a tab represents
@@ -65,6 +66,7 @@ if vim.g.neovide then
   vim.g.neovide_scale_factor = 1.0
   vim.g.neovide_hide_mouse_when_typing = true
 
+  vim.g.neovide_floating_shadow = false
   vim.g.neovide_scroll_animation_length = 0.2
   vim.g.neovide_refresh_rate = 120
   vim.g.neovide_confirm_quit = true
@@ -83,27 +85,27 @@ if vim.g.neovide then
     return string.format("%x", math.floor(255 * (vim.g.neovide_transparency_point or 0.8)))
   end
   -- Set transparency and background color (title bar color)
-  vim.g.neovide_transparency = 0.3
-  vim.g.neovide_transparency_point = 0.9
+  vim.g.neovide_transparency = 1
+  vim.g.neovide_transparency_point = 1
   -- Add keybinds to change transparency
-  local change_transparency = function(delta)
-    vim.g.neovide_transparency_point = vim.g.neovide_transparency_point + delta
-    vim.g.neovide_background_color = vim.g.neovide_background_color_base .. alpha()
-  end
-  vim.keymap.set({ "n", "v", "o" }, "<D-]>", function()
-    if vim.g.neovide_transparency_point <= 0.9 then
-      change_transparency(0.1)
-    end
-  end)
-  vim.keymap.set({ "n", "v", "o" }, "<D-[>", function()
-    if vim.g.neovide_transparency_point >= 0.1 then
-      change_transparency(-0.1)
-    end
-  end)
+  -- local change_transparency = function(delta)
+  --   vim.g.neovide_transparency_point = vim.g.neovide_transparency_point + delta
+  --   -- vim.g.neovide_background_color = vim.g.neovide_background_color_base .. alpha()
+  -- end
+  -- vim.keymap.set({ "n", "v", "o" }, "<D-]>", function()
+  --   if vim.g.neovide_transparency_point <= 0.9 then
+  --     change_transparency(0.1)
+  --   end
+  -- end)
+  -- vim.keymap.set({ "n", "v", "o" }, "<D-[>", function()
+  --   if vim.g.neovide_transparency_point >= 0.1 then
+  --     change_transparency(-0.1)
+  --   end
+  -- end)
   -- vim.g.neovide_transparency = 0.3
-  -- vim.g.transparency = 0.8
+  vim.g.transparency = 1
 
-  vim.g.neovide_window_blurred = true
+  vim.g.neovide_window_blurred = false
 
   vim.keymap.set('n', '<D-s>', vim.cmd.w)                                -- Save
   vim.keymap.set('v', '<D-c>', '"+y', { silent = true, noremap = true }) -- Copy

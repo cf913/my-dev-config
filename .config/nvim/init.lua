@@ -25,17 +25,17 @@ vim.g.maplocalleader = "\\" -- Same for `maplocalleader`
 require("lazy").setup({
   spec = {
     { import = "plugins" },
-    {
-      "m4xshen/hardtime.nvim",
-      dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
-      event = "InsertEnter",
-      keys = {
-        { "<leader>Th", ":Hardtime toggle<cr>", desc = "Toggle Hardtime" },
-      },
-      opts = {
-        max_count = 10,
-      },
-    },
+    -- {
+    --   "m4xshen/hardtime.nvim",
+    --   dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
+    --   event = "InsertEnter",
+    --   keys = {
+    --     { "<leader>Th", ":Hardtime toggle<cr>", desc = "Toggle Hardtime" },
+    --   },
+    --   opts = {
+    --     max_count = 10,
+    --   },
+    -- },
     { "Bilal2453/luvit-meta",             lazy = true }, -- optional `vim.uv` typings
     { "VonHeikemen/lsp-zero.nvim",        branch = "v3.x" },
     { "williamboman/mason.nvim" },
