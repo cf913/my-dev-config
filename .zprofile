@@ -7,5 +7,5 @@ source ~/.orbstack/shell/init.zsh 2>/dev/null || :
 # export NVM_DIR="$HOME/.nvm"
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
-export PATH=/Users/cf913/.nvm/versions/node/v20.15.1/bin:$PATH
+export PATH=/Users/cf913/.nvm/versions/node/v20.17.0/bin:$PATH
 

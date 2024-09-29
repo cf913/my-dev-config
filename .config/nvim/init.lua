@@ -42,6 +42,13 @@ require("lazy").setup({
     { "williamboman/mason-lspconfig.nvim" },
     { "neovim/nvim-lspconfig" },
     {
+      'razak17/tailwind-fold.nvim',
+      lazy = true,
+      opts = {},
+      dependencies = { 'nvim-treesitter/nvim-treesitter' },
+      ft = { 'html', 'svelte', 'astro', 'vue', 'typescriptreact', 'php', 'blade' },
+    },
+    {
       "hrsh7th/nvim-cmp",
       event = "InsertEnter",
       opts = function()

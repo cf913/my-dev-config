@@ -34,6 +34,7 @@ vim.keymap.set("n", "<leader>d", ":lua vim.diagnostic.open_float(nil, {scope=\"c
 
 vim.keymap.set({ "n", "v" }, "<leader>Ts", ":SupermavenToggle<CR>", { desc = "Toggle Supermaven" })
 vim.keymap.set({ "n", "v" }, "<leader>Ti", ":IBLToggle<CR>", { desc = "Toggle Indent" })
+vim.keymap.set({ "n", "v" }, "<leader>Tt", ":TailwindFoldToggle<CR>", { desc = "Toggle TailwindFold" })
 
 vim.keymap.set({ "n", "v" }, "<leader>tn", ":tabn<CR>", { desc = "Tab: Next" })
 vim.keymap.set({ "n", "v" }, "<leader>tp", ":tabp<CR>", { desc = "Tab: Previous" })
