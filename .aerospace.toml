@@ -55,10 +55,10 @@ on-focus-changed = ['move-mouse window-lazy-center']
 [gaps]
 inner.horizontal = 16
 inner.vertical =   16
-outer.left =       0
-outer.bottom =     0
-outer.top =        0
-outer.right =      0
+outer.left =       16
+outer.bottom =     16
+outer.top =        16
+outer.right =      16
 
 [[on-window-detected]]
 if.app-id = 'com.github.wez.wezterm'

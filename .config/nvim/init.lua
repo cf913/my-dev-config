@@ -25,28 +25,18 @@ vim.g.maplocalleader = "\\" -- Same for `maplocalleader`
 require("lazy").setup({
   spec = {
     { import = "plugins" },
-    -- {
-    --   "m4xshen/hardtime.nvim",
-    --   dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
-    --   event = "InsertEnter",
-    --   keys = {
-    --     { "<leader>Th", ":Hardtime toggle<cr>", desc = "Toggle Hardtime" },
-    --   },
-    --   opts = {
-    --     max_count = 10,
-    --   },
-    -- },
     { "Bilal2453/luvit-meta",             lazy = true }, -- optional `vim.uv` typings
-    { "VonHeikemen/lsp-zero.nvim",        branch = "v3.x" },
+    { "VonHeikemen/lsp-zero.nvim",        branch = "v4.x" },
     { "williamboman/mason.nvim" },
     { "williamboman/mason-lspconfig.nvim" },
     { "neovim/nvim-lspconfig" },
     {
       'razak17/tailwind-fold.nvim',
-      lazy = true,
-      opts = {},
+      opts = {
+        ft = { 'html', 'svelte', 'astro', 'vue', 'typescriptreact', 'php', 'blade' },
+      },
+      keys = { { '<leader>TT', desc = 'Start TailwindFold' } },
       dependencies = { 'nvim-treesitter/nvim-treesitter' },
-      ft = { 'html', 'svelte', 'astro', 'vue', 'typescriptreact', 'php', 'blade' },
     },
     {
       "hrsh7th/nvim-cmp",
@@ -56,7 +46,8 @@ require("lazy").setup({
         cmp.setup({
           snippet = {
             expand = function(args)
-              require("luasnip").lsp_expand(args.body) -- For `luasnip` users.
+              -- You need Neovim v0.10 to use vim.snippet
+              vim.snippet.expand(args.body)
             end,
           },
           completion = { completeopt = "menu,menuone,noinsert" },
@@ -87,8 +78,6 @@ require("lazy").setup({
             },
             { name = "nvim_lsp" },
             { name = "nvim_lua" },
-            { name = "luasnip" }, -- For luasnip users.
-            -- { name = "orgmode" },
           }, {
             { name = "buffer" },
             { name = "path" },
@@ -99,12 +88,7 @@ require("lazy").setup({
     {
       "hrsh7th/cmp-nvim-lsp",
     },
-    { "L3MON4D3/LuaSnip" },
-    -- {
-    --   "lewis6991/gitsigns.nvim",
-    --   event = "InsertEnter",
-    --   opts = {},
-    -- },
+    -- { "L3MON4D3/LuaSnip" },
   },
 })
 

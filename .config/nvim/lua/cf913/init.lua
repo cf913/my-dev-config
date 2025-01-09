@@ -67,10 +67,10 @@ if vim.g.neovide then
   vim.g.neovide_hide_mouse_when_typing = true
 
   vim.g.neovide_floating_shadow = false
-  vim.g.neovide_scroll_animation_length = 0.2
+  vim.g.neovide_scroll_animation_length = 0.15
   vim.g.neovide_refresh_rate = 120
   vim.g.neovide_confirm_quit = true
-  vim.g.neovide_cursor_animation_length = 0.1
+  vim.g.neovide_cursor_animation_length = 0.05
   vim.g.neovide_cursor_animate_in_insert_mode = true
   -- not sure if i like smooth inserts or not. WIll have to test both.
   vim.api.nvim_set_keymap("n", "<D-=>",
@@ -85,8 +85,9 @@ if vim.g.neovide then
     return string.format("%x", math.floor(255 * (vim.g.neovide_transparency_point or 0.8)))
   end
   -- Set transparency and background color (title bar color)
-  vim.g.neovide_transparency = 1
-  vim.g.neovide_transparency_point = 1
+  vim.g.neovide_transparency = 0.75
+  vim.g.neovide_transparency_point = 0.75
+  vim.g.neovide_normal_opacity = 1
   -- Add keybinds to change transparency
   -- local change_transparency = function(delta)
   --   vim.g.neovide_transparency_point = vim.g.neovide_transparency_point + delta
@@ -103,9 +104,11 @@ if vim.g.neovide then
   --   end
   -- end)
   -- vim.g.neovide_transparency = 0.3
-  vim.g.transparency = 1
+  vim.g.transparency = 0
 
-  vim.g.neovide_window_blurred = false
+  vim.g.neovide_window_blurred = true
+  vim.g.neovide_floating_corner_radius = 0.2
+
 
   vim.keymap.set('n', '<D-s>', vim.cmd.w)                                -- Save
   vim.keymap.set('v', '<D-c>', '"+y', { silent = true, noremap = true }) -- Copy

@@ -113,14 +113,15 @@ return {
       if vim.g.neovide then
         require("rose-pine").setup({
           styles = {
-            bold = true,
+            -- bold = true,
             italic = false,
             transparency = false,
           },
         })
         -- Set transparency and background color (title bar color)
-        -- vim.g.neovide_background_color_base = "#191724"
-        -- vim.g.neovide_background_color = vim.g.neovide_background_color_base .. alpha()
+        vim.g.neovide_background_color_base = "#191724"
+        vim.g.neovide_background_color = vim.g.neovide_background_color_base .. alpha()
+        -- vim.g.neovide_normal_opacity = 1
         vim.cmd("colorscheme rose-pine")
       else
         vim.cmd("colorscheme rose-pine") -- setting

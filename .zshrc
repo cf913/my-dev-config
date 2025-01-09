@@ -19,7 +19,7 @@ ZSH_THEME="robbyrussell"
 
 # ENABLE_CORRECTION="true"
 
-plugins=(git)
+plugins=(git direnv)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -119,3 +119,4 @@ export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 # bindkey '\t' autosuggest-accept
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH"

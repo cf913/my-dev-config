@@ -1,6 +1,7 @@
 return {
   'nvimdev/dashboard-nvim',
   event = 'VimEnter',
+  -- enabled = false,
   opts = {
     theme = 'hyper',
     config = {
