@@ -85,9 +85,9 @@ if vim.g.neovide then
     return string.format("%x", math.floor(255 * (vim.g.neovide_transparency_point or 0.8)))
   end
   -- Set transparency and background color (title bar color)
-  vim.g.neovide_transparency = 0.75
+  vim.g.neovide_transparency = 0.95
   vim.g.neovide_transparency_point = 0.75
-  vim.g.neovide_normal_opacity = 1
+  vim.g.neovide_normal_opacity = 0.85
   -- Add keybinds to change transparency
   -- local change_transparency = function(delta)
   --   vim.g.neovide_transparency_point = vim.g.neovide_transparency_point + delta
