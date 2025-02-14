@@ -25,9 +25,24 @@ vim.g.maplocalleader = "\\" -- Same for `maplocalleader`
 require("lazy").setup({
   spec = {
     { import = "plugins" },
-    { "Bilal2453/luvit-meta",             lazy = true }, -- optional `vim.uv` typings
-    { "VonHeikemen/lsp-zero.nvim",        branch = "v4.x" },
+    { "Bilal2453/luvit-meta",      lazy = true }, -- optional `vim.uv` typings
+    { "VonHeikemen/lsp-zero.nvim", branch = "v4.x" },
     { "williamboman/mason.nvim" },
+    {
+      "FabijanZulj/blame.nvim",
+      lazy = false,
+      config = function()
+        require('blame').setup {
+          mappings = {
+            commit_info = "i",
+            stack_push = "<TAB>",
+            stack_pop = "<BS>",
+            show_commit = "<CR>",
+            close = { "q" },
+          }
+        }
+      end,
+    },
     { "williamboman/mason-lspconfig.nvim" },
     { "neovim/nvim-lspconfig" },
     {

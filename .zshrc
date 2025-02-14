@@ -113,7 +113,7 @@ source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # ANDROID STUDIO STUFF
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home
+export JAVA_HOME=/Users/cf913/Library/Java/JavaVirtualMachines/jbr-17.0.14/Contents/Home
 export ANDROID_HOME=/Users/cf913/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/platform-tools

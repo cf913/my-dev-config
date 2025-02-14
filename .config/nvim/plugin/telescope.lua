@@ -15,8 +15,9 @@ vim.keymap.set('n', '<leader>fc',
 vim.keymap.set('n', '<leader>fr', builtin.oldfiles, { desc = "Find Recent Files" })
 vim.keymap.set('n', '<leader>fR', builtin.lsp_references, { desc = "Find LSP References" })
 vim.keymap.set('n', '<leader>fk', builtin.keymaps, { desc = "Find Keymaps" })
-vim.keymap.set('n', '<leader>fb', function() builtin.buffers({ sort_mru = true, ignore_current_buffer = true }) end,
-  { desc = "Find Buffers", })
+-- vim.keymap.set('n', '<leader>fb', function() builtin.buffers({ sort_mru = true, ignore_current_buffer = true }) end,
+--   { desc = "Find Buffers", })
+vim.keymap.set('n', '<leader>fb', ':BlameToggle<CR>', { desc = "Toggle Git Blame" })
 vim.keymap.set({ 'n', 'v' }, '<leader><leader>',
   function()
     require("neo-tree.command").execute({ source = "buffers", reveal = true, position = 'float' })
