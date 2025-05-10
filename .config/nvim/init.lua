@@ -25,9 +25,11 @@ vim.g.maplocalleader = "\\" -- Same for `maplocalleader`
 require("lazy").setup({
   spec = {
     { import = "plugins" },
-    { "Bilal2453/luvit-meta",      lazy = true }, -- optional `vim.uv` typings
-    { "VonHeikemen/lsp-zero.nvim", branch = "v4.x" },
-    { "williamboman/mason.nvim" },
+    -- { "VonHeikemen/lsp-zero.nvim",     branch = "v4.x" },
+    { "mason-org/mason.nvim" },
+    { "mason-org/mason-lspconfig.nvim" },
+    { "neovim/nvim-lspconfig" },
+    { "Bilal2453/luvit-meta",          lazy = true }, -- optional `vim.uv` typings
     {
       "FabijanZulj/blame.nvim",
       lazy = false,
@@ -43,8 +45,6 @@ require("lazy").setup({
         }
       end,
     },
-    { "williamboman/mason-lspconfig.nvim" },
-    { "neovim/nvim-lspconfig" },
     {
       'razak17/tailwind-fold.nvim',
       opts = {
@@ -55,7 +55,7 @@ require("lazy").setup({
     },
     {
       "hrsh7th/nvim-cmp",
-      event = "InsertEnter",
+      event = { "InsertEnter", "CmdlineEnter" },
       opts = function()
         local cmp = require("cmp")
         cmp.setup({

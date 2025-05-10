@@ -3,6 +3,12 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.inccommand = "split"
 
+vim.keymap.set({ "n", "v", "i" }, "<F1>", "<nop>")
+vim.keymap.set({ "n", "v", "i" }, "<F2>", "<nop>")
+vim.keymap.set({ "n", "v", "i" }, "<F3>", "<nop>")
+vim.keymap.set({ "n", "v", "i" }, "<F4>", "<nop>")
+vim.keymap.set({ "n", "v", "i" }, "<F5>", "<nop>")
+
 vim.keymap.set("n", "<leader>1", vim.cmd.tabfirst, { desc = "Tab: First" })
 vim.keymap.set("n", "<leader>2", "2gt", { desc = "Tab: 2nd" })
 vim.keymap.set("n", "<leader>3", "3gt", { desc = "Tab: 3nd" })

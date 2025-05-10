@@ -120,3 +120,6 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 # bindkey '\t' autosuggest-accept
 export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+
+# Added by Windsurf
+export PATH="/Users/cf913/.codeium/windsurf/bin:$PATH"

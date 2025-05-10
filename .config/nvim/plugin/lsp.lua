@@ -1,77 +1,78 @@
 -- LSP
-local lsp_zero = require("lsp-zero")
-
+-- local lsp_zero = require("lsp-zero")
+--
 vim.opt.signcolumn = 'yes'
-
-lsp_zero.on_attach(function(client, bufnr)
-  -- see :help lsp-zero-keybindings
-  -- to learn the available actions
-  lsp_zero.default_keymaps({ buffer = bufnr })
-  lsp_zero.buffer_autoformat()
-end)
-
-local lspconfig = require("lspconfig")
-
-local check_if_server_is_active = function(name, bufnr)
-  local active_clients = vim.lsp.get_clients()
-  for _, client in pairs(active_clients) do
-    if client.name == name then
-      return vim.lsp.buf_is_attached(bufnr, client.id), client
-    end
-  end
-  return false
-end
-
-vim.api.nvim_create_autocmd("LspAttach", {
-  callback = function(args)
-    local bufnr = args.buf
-    local client = vim.lsp.get_client_by_id(args.data.client_id)
-    if client.name == "ts_ls" then
-      local is_denols_active = check_if_server_is_active("denols", bufnr)
-      if is_denols_active then
-        vim.lsp.buf_detach_client(bufnr, args.data.client_id)
-      end
-    elseif client.name == "denols" then
-      local is_ts_ls_active, active_client = check_if_server_is_active("ts_ls", bufnr)
-      if is_ts_ls_active then
-        vim.lsp.buf_detach_client(bufnr, active_client.id)
-      end
-    end
-  end,
-})
-
+--
+-- lsp_zero.on_attach(function(client, bufnr)
+--   -- see :help lsp-zero-keybindings
+--   -- to learn the available actions
+--   lsp_zero.default_keymaps({ buffer = bufnr })
+--   lsp_zero.buffer_autoformat()
+-- end)
+--
+-- local lspconfig = require("lspconfig")
+--
+-- local check_if_server_is_active = function(name, bufnr)
+--   local active_clients = vim.lsp.get_clients()
+--   for _, client in pairs(active_clients) do
+--     if client.name == name then
+--       return vim.lsp.buf_is_attached(bufnr, client.id), client
+--     end
+--   end
+--   return false
+-- end
+--
+-- vim.api.nvim_create_autocmd("LspAttach", {
+--   callback = function(args)
+--     local bufnr = args.buf
+--     local client = vim.lsp.get_client_by_id(args.data.client_id)
+--     if client.name == "ts_ls" then
+--       local is_denols_active = check_if_server_is_active("denols", bufnr)
+--       if is_denols_active then
+--         vim.lsp.buf_detach_client(bufnr, args.data.client_id)
+--       end
+--     elseif client.name == "denols" then
+--       local is_ts_ls_active, active_client = check_if_server_is_active("ts_ls", bufnr)
+--       if is_ts_ls_active then
+--         vim.lsp.buf_detach_client(bufnr, active_client.id)
+--       end
+--     end
+--   end,
+-- })
+--
 require("mason").setup({})
 require("mason-lspconfig").setup({
+  automatic_enable = true,
   -- Replace the language servers listed here
   -- with the ones you want to install
-  ensure_installed = { "denols", "ts_ls", "emmet_language_server", "lua_ls" },
-  handlers = {
-    function(server_name)
-      lspconfig[server_name].setup({})
-    end,
-    ["ts_ls"] = function()
-      lspconfig["ts_ls"].setup({
-        root_dir = lspconfig.util.root_pattern("package.json", "tsconfig.json", ".git"),
-        on_attach = function(client, bufnr)
-          local is_denols_active = check_if_server_is_active("denols", bufnr)
-          if is_denols_active then
-            vim.lsp.buf_detach_client(bufnr, client.id)
-          end
-        end,
-      })
-    end,
-    ["denols"] = function()
-      lspconfig["denols"].setup({
-        root_dir = lspconfig.util.root_pattern("deno.json"),
-        on_attach = function(_, bufnr)
-          local is_ts_ls_active, active_client = check_if_server_is_active("ts_ls", bufnr)
-          if is_ts_ls_active then
-            vim.lsp.buf_detach_client(bufnr, active_client.id)
-          end
-        end,
-      })
-    end,
-  },
+  ensure_installed = { "ts_ls", "emmet_language_server", "lua_ls" },
+  -- handlers = {
+  --   function(server_name)
+  --     lspconfig[server_name].setup({})
+  --   end,
+  --   ["ts_ls"] = function()
+  --     lspconfig["ts_ls"].setup({
+  --       root_dir = lspconfig.util.root_pattern("package.json", "tsconfig.json", ".git"),
+  --       on_attach = function(client, bufnr)
+  --         local is_denols_active = check_if_server_is_active("denols", bufnr)
+  --         if is_denols_active then
+  --           vim.lsp.buf_detach_client(bufnr, client.id)
+  --         end
+  --       end,
+  --     })
+  --   end,
+  --   ["denols"] = function()
+  --     lspconfig["denols"].setup({
+  --       root_dir = lspconfig.util.root_pattern("deno.json"),
+  --       on_attach = function(_, bufnr)
+  --         local is_ts_ls_active, active_client = check_if_server_is_active("ts_ls", bufnr)
+  --         if is_ts_ls_active then
+  --           vim.lsp.buf_detach_client(bufnr, active_client.id)
+  --         end
+  --       end,
+  --     })
+  --   end,
+  -- },
 })
 
 -- local cmp = require("cmp")
