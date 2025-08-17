@@ -1,7 +1,12 @@
 return {
   "supermaven-inc/supermaven-nvim",
   keys = {
-    { "<leader>TS", desc = 'Start Supermaven' },
+    {
+      "<leader>TS",
+      desc = 'Start Supermaven',
+      accept_suggestion = "<Tab>",
+      clear_suggestion = "<C-]>"
+    },
   },
   opts = {
     color = {

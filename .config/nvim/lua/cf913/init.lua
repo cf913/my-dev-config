@@ -79,6 +79,7 @@ if vim.g.neovide then
     ":lua vim.g.neovide_scale_factor = math.max(vim.g.neovide_scale_factor - 0.1,  0.1)<CR>", { silent = true })
   vim.opt.linespace = 7
 
+
   -- g:neovide_transparency should be 0 if you want to unify transparency of content and title bar.
   -- -- Helper function for transparency formatting
   local alpha = function()

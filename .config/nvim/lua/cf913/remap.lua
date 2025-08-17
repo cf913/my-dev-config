@@ -52,7 +52,7 @@ vim.keymap.set({ "n", "v" }, "<leader>tq", ":tabc<CR>", { desc = "Tab: Open" })
 
 
 local auto_import = function()
-  local params = vim.lsp.util.make_range_params()
+  local params = vim.lsp.util.make_range_params(nil, 'utf-16')
   params.context = {
     only = { "source.addMissingImports.ts" },
   }
@@ -72,7 +72,7 @@ local auto_import = function()
 end
 
 local organize_imports = function()
-  local params = vim.lsp.util.make_range_params()
+  local params = vim.lsp.util.make_range_params(nil, 'utf-16')
   params.context = {
     only = { "source.removeUnused.ts" },
   }
