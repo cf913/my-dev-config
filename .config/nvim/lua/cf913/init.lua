@@ -82,14 +82,14 @@ if vim.g.neovide then
 
   -- g:neovide_transparency should be 0 if you want to unify transparency of content and title bar.
   -- -- Helper function for transparency formatting
-  local alpha = function()
-    return string.format("%x", math.floor(255 * (vim.g.neovide_transparency_point or 0.8)))
-  end
+  -- local alpha = function()
+  --   return string.format("%x", math.floor(255 * (vim.g.neovide_transparency_point or 0.8)))
+  -- end
   -- Set transparency and background color (title bar color)
-  vim.g.neovide_transparency = 0.95
-  vim.g.neovide_transparency_point = 0.75
-  vim.g.neovide_normal_opacity = 0.85
-  -- Add keybinds to change transparency
+  -- vim.g.neovide_opacity = 0.95
+  -- vim.g.neovide_transparency_point = 0.75
+  -- vim.g.neovide_normal_opacity = 0.85
+  -- Add keybinds to chanoge transparency
   -- local change_transparency = function(delta)
   --   vim.g.neovide_transparency_point = vim.g.neovide_transparency_point + delta
   --   -- vim.g.neovide_background_color = vim.g.neovide_background_color_base .. alpha()
@@ -105,10 +105,15 @@ if vim.g.neovide then
   --   end
   -- end)
   -- vim.g.neovide_transparency = 0.3
-  vim.g.transparency = 0
 
   vim.g.neovide_window_blurred = true
-  vim.g.neovide_floating_corner_radius = 0.2
+  vim.g.neovide_floating_corner_radius = 0.3
+  vim.g.neovide_floating_blur_amount_x = 15.0
+  vim.g.neovide_floating_blur_amount_y = 15.0
+  vim.g.neovide_padding_top = 0
+  vim.g.neovide_padding_bottom = 0
+  vim.g.neovide_padding_right = 0
+  vim.g.neovide_padding_left = 8
 
 
   vim.keymap.set('n', '<D-s>', vim.cmd.w)                                -- Save

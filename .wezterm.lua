@@ -42,7 +42,7 @@ config.colors = {
 -- config.font = wezterm.font("MesloLGS Nerd Font Mono", { weight = 'Medium' })
 -- config.freetype_load_flags = 'NO_HINTING'
 config.font = wezterm.font('JetBrainsMono Nerd Font', { weight = 'Regular' })
-config.font_size = 14
+config.font_size = 13
 config.line_height = 1.2
 config.cell_width = 1
 
@@ -53,9 +53,9 @@ config.show_new_tab_button_in_tab_bar = false
 
 config.window_padding = {
   left = 8,
-  right = 0,
-  top = 8,
-  bottom = 0,
+  right = 8,
+  top = 4,
+  bottom = 4,
 }
 
 config.window_frame = {
@@ -70,16 +70,17 @@ config.window_frame = {
 }
 
 config.window_decorations = "RESIZE"
-config.window_background_opacity = 0.93
+-- config.window_background_opacity = 0.93
+config.window_background_opacity = 0.8
 config.macos_window_background_blur = 50
 
-config.keys = {
-  {
-    key = 'n',
-    mods = 'SHIFT|CTRL',
-    action = wezterm.action.ToggleFullScreen,
-  },
-}
+-- config.keys = { {
+--   key = 'n',
+--   mods = 'SHIFT|CTRL',
+--   action = wezterm.action.ToggleFullScreen,
+--   { key = "Enter", mods = "SHIFT", action = wezterm.action { SendString = "\x1b\r" } },
+-- },
+-- }
 
 -- and finally, return the configuration to wezterm
 return config

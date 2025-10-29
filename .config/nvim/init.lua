@@ -27,10 +27,20 @@ require("lazy").setup({
   spec = {
     { import = "plugins" },
     -- { "VonHeikemen/lsp-zero.nvim",     branch = "v4.x" },
-    { "mason-org/mason.nvim" },
-    { "mason-org/mason-lspconfig.nvim" },
-    { "neovim/nvim-lspconfig" },
-    { "Bilal2453/luvit-meta",          lazy = true }, -- optional `vim.uv` typings
+    {
+      "mason-org/mason-lspconfig.nvim",
+      opts = {
+        automatic_enable = true,
+        ensure_installed = {
+          "lua_ls", "emmet_language_server", "ts_ls", "vimls"
+        }
+      },
+      dependencies = {
+        { "mason-org/mason.nvim", opts = {} },
+        { "neovim/nvim-lspconfig" },
+      },
+    },
+    { "Bilal2453/luvit-meta", lazy = true }, -- optional `vim.uv` typings
     {
       "FabijanZulj/blame.nvim",
       lazy = false,
@@ -106,58 +116,18 @@ require("lazy").setup({
         fuzzy = { implementation = "prefer_rust_with_warning" }
       },
       opts_extend = { "sources.default" }
+    },
+    {
+      "sphamba/smear-cursor.nvim",
+      enabled = not vim.g.neovide,
+      opts = {
+        cursor_color = "#47FF9C",
+        legacy_computing_symbols_support = true,
+        -- stiffness = 0.8,
+        -- trailing_stiffness = 0.5,
+        -- distance_stop_animationg = 0.5
+      },
     }
-    -- {
-    --   "hrsh7th/nvim-cmp",
-    --   event = { "InsertEnter", "CmdlineEnter" },
-    --   opts = function()
-    --     local cmp = require("cmp")
-    --     cmp.setup({
-    --       snippet = {
-    --         expand = function(args)
-    --           -- You need Neovim v0.10 to use vim.snippet
-    --           vim.snippet.expand(args.body)
-    --         end,
-    --       },
-    --       completion = { completeopt = "menu,menuone,noinsert" },
-    --       window = {
-    --         -- completion = cmp.config.window.bordered(),
-    --         -- documentation = cmp.config.window.bordered(),
-    --       },
-    --       mapping = cmp.mapping.preset.insert({
-    --         ["<C-b>"] = cmp.mapping.scroll_docs(-4),
-    --         ["<C-f>"] = cmp.mapping.scroll_docs(4),
-    --         -- Ctrl + space triggers completion menu
-    --         ["<C-Space>"] = cmp.mapping.complete(),
-    --         -- ["<C-e>"] = cmp.mapping.abort(),
-    --         ["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-    --         ["<C-n>"] = cmp.mapping(function()
-    --           if cmp.visible() then
-    --             cmp.select_next_item({ behavior = "insert" })
-    --           else
-    --             cmp.complete()
-    --           end
-    --         end),
-    --       }),
-    --       sources = cmp.config.sources({
-    --         {
-    --           name = "lazydev",
-    --           -- set group index to 0 to skip loading LuaLS completions as lazydev recommends it
-    --           group_index = 0,
-    --         },
-    --         { name = "nvim_lsp" },
-    --         { name = "nvim_lua" },
-    --       }, {
-    --         { name = "buffer" },
-    --         { name = "path" },
-    --       }),
-    --     })
-    --   end,
-    -- },
-    -- {
-    --   "hrsh7th/cmp-nvim-lsp",
-    -- },
-    -- { "L3MON4D3/LuaSnip" },
   },
 })
 
