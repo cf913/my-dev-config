@@ -53,7 +53,7 @@ end
 --- Parse a given integer color to a hex value.
 --- @param int_color number
 function M.parse_hex(int_color)
-  return string.format("#%x", int_color)
+  return string.format("#%06x", int_color)
 end
 
 return M

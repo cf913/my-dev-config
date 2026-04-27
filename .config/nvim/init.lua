@@ -1,10 +1,12 @@
+vim.g.mapleader = " "
+vim.g.maplocalleader = "\\"
+
 require("cf913")
 
 vim.g.loaded_netrw = 0
 vim.g.loaded_netrwPlugin = 0
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-local params = vim.lsp.util.make_position_params(nil, "utf-16")
 
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   vim.fn.system({
@@ -19,9 +21,6 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 
 vim.opt.rtp:prepend(lazypath)
-
-vim.g.mapleader = " "       -- Make sure to set `mapleader` before lazy so your mappings are correct
-vim.g.maplocalleader = "\\" -- Same for `maplocalleader`
 
 require("lazy").setup({
   spec = {
@@ -117,17 +116,17 @@ require("lazy").setup({
       },
       opts_extend = { "sources.default" }
     },
-    {
-      "sphamba/smear-cursor.nvim",
-      enabled = not vim.g.neovide,
-      opts = {
-        cursor_color = "#47FF9C",
-        legacy_computing_symbols_support = true,
-        -- stiffness = 0.8,
-        -- trailing_stiffness = 0.5,
-        -- distance_stop_animationg = 0.5
-      },
-    }
+    -- {
+    --   "sphamba/smear-cursor.nvim",
+    --   enabled = not vim.g.neovide,
+    --   opts = {
+    --     cursor_color = "#47FF9C",
+    --     legacy_computing_symbols_support = true,
+    --     -- stiffness = 0.8,
+    --     -- trailing_stiffness = 0.5,
+    --     -- distance_stop_animationg = 0.5
+    --   },
+    -- }
   },
 })
 

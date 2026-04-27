@@ -61,7 +61,7 @@ return {
         styles = {
           bold = true,
           italic = false,
-          transparency = true,
+          transparency = false,
         },
 
         groups = {
@@ -108,28 +108,15 @@ return {
       })
 
       if vim.g.neovide then
-        require("rose-pine").setup({
-          styles = {
-            -- bold = true,
-            italic = false,
-            transparency = true,
-          },
-        })
         -- Set transparency and background color (title bar color)
-        vim.g.neovide_background_color_base = "#191724"
-        vim.g.transparency = 1
-        vim.g.neovide_opacity = 0.5
-        vim.g.neovide_normal_opacity = 0
-
-        local alpha = function()
-          return string.format("%x", math.floor(255 * 0.80))
-        end
-
-        vim.g.neovide_background_color = vim.g.neovide_background_color_base .. alpha()
-        vim.cmd("colorscheme rose-pine")
-      else
-        vim.cmd("colorscheme rose-pine") -- setting
+        -- vim.g.neovide_background_color_base = "#191724"
+        -- vim.g.transparency = 1
+        vim.g.neovide_opacity = 0.8
+        vim.g.neovide_show_border = false
+        -- vim.g.neovide_background_color = vim.g.neovide_background_color_base .. "cc" -- 80% alpha
       end
+
+      vim.cmd("colorscheme rose-pine")
     end
   }
 }

@@ -1,4 +1,3 @@
-vim.g.mapleader = " "
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.inccommand = "split"
@@ -32,7 +31,7 @@ vim.keymap.set("n", "|", ":vsplit<CR>", { desc = "Window: Split |" })
 -- SET
 -- vim.keymap.set("n", "<leader>S", ":set ic!<CR>", { desc = "Toggle Search SmartCase" })
 vim.keymap.set("n", "<leader>sc2", ":set conceallevel=2<CR>", { desc = "Set conceallevel 2" })
-vim.keymap.set("n", "<leader>sc0", ":set conceallevel=0<CR>", { desc = "Set conceallevel 2" })
+vim.keymap.set("n", "<leader>sc0", ":set conceallevel=0<CR>", { desc = "Set conceallevel 0" })
 
 vim.keymap.set("n", "<leader>d", ":lua vim.diagnostic.open_float(nil, {scope=\"cursor\"})<CR>",
   { desc = "Diagnostic Over Cursor" })
@@ -45,7 +44,7 @@ vim.keymap.set({ "n", "v" }, "<leader>Tf", ":TailwindFoldToggle<CR>", { desc = "
 vim.keymap.set({ "n", "v" }, "<leader>tn", ":tabn<CR>", { desc = "Tab: Next" })
 vim.keymap.set({ "n", "v" }, "<leader>tp", ":tabp<CR>", { desc = "Tab: Previous" })
 vim.keymap.set({ "n", "v" }, "<leader>to", ":tab new<CR>", { desc = "Tab: Open" })
-vim.keymap.set({ "n", "v" }, "<leader>tq", ":tabc<CR>", { desc = "Tab: Open" })
+vim.keymap.set({ "n", "v" }, "<leader>tq", ":tabc<CR>", { desc = "Tab: Close" })
 
 
 

@@ -56,10 +56,6 @@ if vim.g.neovide then
   local default_path = vim.fn.expand("~/")
   vim.api.nvim_set_current_dir(default_path)
   -- Put anything you want to happen only in Neovide here
-  vim.g.neovide_padding_top = 10
-  vim.g.neovide_padding_bottom = 0
-  vim.g.neovide_padding_right = 0
-  vim.g.neovide_padding_left = 0
   vim.g.neovide_text_gamma = 0.01
   vim.g.neovide_text_contrast = 0.01
 
@@ -130,8 +126,12 @@ if vim.g.neovide then
   vim.api.nvim_set_keymap('v', '<D-v>', '<C-R>+', { noremap = true, silent = true })
 end
 
-vim.keymap.set({ 'n', 'i', 'v' }, '<M-up>', 'ddkP', { desc = 'Move line UP' })
-vim.keymap.set({ 'n', 'i', 'v' }, '<M-down>', 'ddp', { desc = 'Move line DOWN' })
+vim.keymap.set('n', '<M-up>', 'ddkP', { desc = 'Move line UP' })
+vim.keymap.set('n', '<M-down>', 'ddp', { desc = 'Move line DOWN' })
+vim.keymap.set('v', '<M-up>', ":m '<-2<CR>gv=gv", { desc = 'Move selection UP' })
+vim.keymap.set('v', '<M-down>', ":m '>+1<CR>gv=gv", { desc = 'Move selection DOWN' })
+vim.keymap.set('i', '<M-up>', '<Esc>ddkPi', { desc = 'Move line UP' })
+vim.keymap.set('i', '<M-down>', '<Esc>ddpi', { desc = 'Move line DOWN' })
 
 -- Syntax highlighting and filetype plugins
 vim.cmd('syntax enable')
