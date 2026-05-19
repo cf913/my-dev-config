@@ -14,6 +14,7 @@ vim.o.conceallevel = 2
 vim.o.cmdheight = 0
 vim.o.splitbelow = true
 vim.o.splitright = true
+vim.o.signcolumn = "yes"
 
 vim.o.scrolloff = 6
 
@@ -132,7 +133,3 @@ vim.keymap.set('v', '<M-up>', ":m '<-2<CR>gv=gv", { desc = 'Move selection UP' }
 vim.keymap.set('v', '<M-down>', ":m '>+1<CR>gv=gv", { desc = 'Move selection DOWN' })
 vim.keymap.set('i', '<M-up>', '<Esc>ddkPi', { desc = 'Move line UP' })
 vim.keymap.set('i', '<M-down>', '<Esc>ddpi', { desc = 'Move line DOWN' })
-
--- Syntax highlighting and filetype plugins
-vim.cmd('syntax enable')
-vim.cmd('filetype plugin indent on')

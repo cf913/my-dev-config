@@ -50,44 +50,17 @@ vim.keymap.set({ "n", "v" }, "<leader>tq", ":tabc<CR>", { desc = "Tab: Close" })
 
 
 local auto_import = function()
-  local params = vim.lsp.util.make_range_params(nil, 'utf-16')
-  params.context = {
-    only = { "source.addMissingImports.ts" },
-  }
-  local result = vim.lsp.buf_request_sync(0, "textDocument/codeAction", params)
-  for _, res in pairs(result or {}) do
-    for _, r in pairs(res.result or {}) do
-      if r.kind == "source.addMissingImports.ts" then
-        vim.lsp.buf.code_action({
-          apply = true,
-          context = {
-            only = { "source.addMissingImports.ts" },
-          },
-        })
-      end
-    end
-  end
+  vim.lsp.buf.code_action({
+    apply = true,
+    context = { only = { "source.addMissingImports.ts" }, diagnostics = {} },
+  })
 end
 
 local organize_imports = function()
-  local params = vim.lsp.util.make_range_params(nil, 'utf-16')
-  params.context = {
-    only = { "source.removeUnused.ts" },
-  }
-  local result = vim.lsp.buf_request_sync(0, "textDocument/codeAction", params)
-  for _, res in pairs(result or {}) do
-    for _, r in pairs(res.result or {}) do
-      if r.kind == "source.removeUnused.ts" then
-        vim.lsp.buf.code_action({
-          apply = true,
-          context = {
-            only = { "source.removeUnused.ts" },
-          },
-        })
-      end
-    end
-  end
-  vim.lsp.buf.execute_command({ command = "_typescript.organizeImports", arguments = { vim.fn.expand("%:p") } })
+  vim.lsp.buf.code_action({
+    apply = true,
+    context = { only = { "source.organizeImports.ts" }, diagnostics = {} },
+  })
 end
 
 vim.keymap.set("n", "<leader>ii", auto_import, { desc = "Import: Add Missing" })

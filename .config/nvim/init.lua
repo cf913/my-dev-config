@@ -29,17 +29,14 @@ require("lazy").setup({
     {
       "mason-org/mason-lspconfig.nvim",
       opts = {
-        automatic_enable = true,
-        ensure_installed = {
-          "lua_ls", "emmet_language_server", "ts_ls", "vimls"
-        }
+        ensure_installed = { "lua_ls", "emmet_language_server", "ts_ls", "vimls" },
+        automatic_enable = { "lua_ls", "emmet_language_server", "ts_ls", "vimls" },
       },
       dependencies = {
         { "mason-org/mason.nvim", opts = {} },
         { "neovim/nvim-lspconfig" },
       },
     },
-    { "Bilal2453/luvit-meta", lazy = true }, -- optional `vim.uv` typings
     {
       "FabijanZulj/blame.nvim",
       lazy = false,
@@ -57,9 +54,8 @@ require("lazy").setup({
     },
     {
       'razak17/tailwind-fold.nvim',
-      opts = {
-        ft = { 'html', 'svelte', 'astro', 'vue', 'typescriptreact', 'php', 'blade' },
-      },
+      ft = { 'html', 'svelte', 'astro', 'vue', 'typescriptreact', 'php', 'blade' },
+      opts = {},
       keys = { { '<leader>TT', desc = 'Start TailwindFold' } },
       dependencies = { 'nvim-treesitter/nvim-treesitter' },
     },
@@ -133,3 +129,4 @@ require("lazy").setup({
 vim.g.markdown_fenced_languages = {
   "ts=typescript",
 }
+
